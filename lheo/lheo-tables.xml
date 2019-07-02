@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dictionaries xmlns="http://www.gelaba.org/gml/1.1" xmlns:gml="http://www.gelaba.org/gml/1.1" xml:lang="fr">
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-boolean">
+    <fullname xml:lang="fr">Valeurs booléennes</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="non"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="oui"/>
+    </entry>
+    <property name="glb:service" value="boolean"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-modalites-enseignement">
+    <fullname xml:lang="fr">Formation présentielle ou a distance</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="formation entièrement présentielle"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="formation mixte"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="formation entièrement à distance"/>
+    </entry>
+    <property name="glb:service" value="modalites-enseignement"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-modalites-es">
+    <fullname xml:lang="fr">Modalités d'entrées/sorties</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="entrées/sorties à dates fixes"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="entrées/sorties permanentes"/>
+    </entry>
+    <property name="glb:service" value="modalites-es"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-etat-recrutement">
+    <fullname xml:lang="fr">Etat du recrutement</fullname>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="ouvert"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="fermé"/>
+    </entry>
+    <entry>
+      <key val="3"/>
+      <value xml:lang="fr" val="suspendu"/>
+    </entry>
+    <property name="glb:service" value="etat-recrutement"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-AIS">
+    <fullname xml:lang="fr">Objectif général de formation</fullname>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="Code(s) obsolète(s)"/>
+    </entry>
+    <entry>
+      <key val="6"/>
+      <value xml:lang="fr" val="Certification"/>
+    </entry>
+    <entry>
+      <key val="7"/>
+      <value xml:lang="fr" val="Professionnalisation"/>
+    </entry>
+    <entry>
+      <key val="8"/>
+      <value xml:lang="fr" val="Préparation à la qualification"/>
+    </entry>
+    <entry>
+      <key val="5"/>
+      <value xml:lang="fr" val="Remise à niveau, maîtrise des savoirs de base, initiation"/>
+    </entry>
+    <entry>
+      <key val="9"/>
+      <value xml:lang="fr" val="(Re)mobilisation, aide à l'élaboration de projet professionnel"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <key val="3"/>
+      <value xml:lang="fr" val="Perfectionnement, élargissement des compétences"/>
+    </entry>
+    <entry>
+      <key val="4"/>
+      <value xml:lang="fr" val="Création d'entreprise"/>
+    </entry>
+    <property name="glb:service" value="AIS"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-perimetre-recrutement">
+    <fullname xml:lang="fr">Périmètre de recrutement</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="Autres"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="Commune"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="Département"/>
+    </entry>
+    <entry>
+      <key val="3"/>
+      <value xml:lang="fr" val="Région"/>
+    </entry>
+    <entry>
+      <key val="4"/>
+      <value xml:lang="fr" val="Interrégion"/>
+    </entry>
+    <entry>
+      <key val="5"/>
+      <value xml:lang="fr" val="Pays"/>
+    </entry>
+    <entry>
+      <key val="6"/>
+      <value xml:lang="fr" val="International"/>
+    </entry>
+    <property name="glb:service" value="perimetre-recrutement"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-financeurs">
+    <fullname xml:lang="fr">Financeurs</fullname>
+    <entry>
+      <key val="11"/>
+      <value xml:lang="fr" val="Etat - Ministère chargé de l'emploi"/>
+    </entry>
+    <entry>
+      <key val="12"/>
+      <value xml:lang="fr" val="Etat - Ministère de l'éducation nationale"/>
+    </entry>
+    <entry>
+      <key val="13"/>
+      <value xml:lang="fr" val="Etat - Autre"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="Collectivité territoriale - Conseil régional"/>
+    </entry>
+    <entry>
+      <key val="3"/>
+      <value xml:lang="fr" val="Fonds européens - FSE"/>
+    </entry>
+    <entry>
+      <key val="4"/>
+      <value xml:lang="fr" val="Pôle emploi"/>
+    </entry>
+    <entry>
+      <key val="5"/>
+      <value xml:lang="fr" val="Entreprise"/>
+    </entry>
+    <entry>
+      <key val="6"/>
+      <value xml:lang="fr" val="ACSÉ (anciennement FASILD)"/>
+    </entry>
+    <entry>
+      <key val="7"/>
+      <value xml:lang="fr" val="AGEFIPH"/>
+    </entry>
+    <entry>
+      <key val="8"/>
+      <value xml:lang="fr" val="Collectivité territoriale - Conseil général"/>
+    </entry>
+    <entry>
+      <key val="9"/>
+      <value xml:lang="fr" val="Collectivité territoriale - Commune"/>
+    </entry>
+    <entry>
+      <key val="15"/>
+      <value xml:lang="fr" val="Collectivité territoriale - Autre"/>
+    </entry>
+    <entry>
+      <key val="10"/>
+      <value xml:lang="fr" val="Bénéficiaire de l'action"/>
+    </entry>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="Autre"/>
+    </entry>
+    <entry>
+      <key val="14"/>
+      <value xml:lang="fr" val="Fonds européens - Autre"/>
+    </entry>
+    <entry>
+      <key val="16"/>
+      <value xml:lang="fr" val="OPCA"/>
+    </entry>
+    <entry>
+      <key val="17"/>
+      <value xml:lang="fr" val="OPACIF"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="Code(s) obsolète(s)"/>
+    </entry>
+    <property name="glb:service" value="financeurs"/>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-type-parcours">
+    <fullname xml:lang="fr">Type de parcours de formation</fullname>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="en groupe (non personnalisable)"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="individualisé"/>
+    </entry>
+    <entry>
+      <key val="3"/>
+      <value xml:lang="fr" val="modularisé"/>
+    </entry>
+    <entry>
+      <key val="4"/>
+      <value xml:lang="fr" val="mixte"/>
+    </entry>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-type-positionnement">
+    <fullname xml:lang="fr">Type de positionnement</fullname>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="réglementaire"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="pédagogique"/>
+    </entry>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-type-module">
+    <fullname xml:lang="fr">Type de module</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="information inconnue"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="obligatoire"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="personnalisable"/>
+    </entry>
+  </dict>
+  <dict xmlns:pgml="http://www.gelaba.org/pgml" name="dict-niveaux">
+    <fullname xml:lang="fr">Niveaux</fullname>
+    <entry>
+      <key val="0"/>
+      <value xml:lang="fr" val="information non communiquée"/>
+    </entry>
+    <entry>
+      <key val="1"/>
+      <value xml:lang="fr" val="sans niveau spécifique"/>
+    </entry>
+    <entry>
+      <key val="2"/>
+      <value xml:lang="fr" val="niveau VI (illettrisme, analphabétisme)"/>	     
+    </entry>
+    <entry>
+      <key val="3"/>
+      <value xml:lang="fr" val="niveau V bis (préqualification)"/>	     
+    </entry>
+    <entry>
+      <key val="4"/>
+      <value xml:lang="fr" val="niveau V (CAP, BEP, CFPA du premier degré)"/>	     
+    </entry>
+    <entry>
+      <key val="5"/>
+      <value xml:lang="fr" val="niveau IV (BP, BT, baccalauréat professionnel ou technologique)"/>
+    </entry>
+    <entry>
+      <key val="6"/>
+      <value xml:lang="fr" val="niveau III (BTS, DUT)"/>
+    </entry>
+    <entry>
+      <key val="7"/>
+      <value xml:lang="fr" val="niveau II (licence ou maîtrise universitaire)"/>
+    </entry>
+    <entry>
+      <key val="8"/>
+      <value xml:lang="fr" val="niveau I (supérieur à la maîtrise)"/>
+    </entry>
+  </dict>
+</dictionaries>

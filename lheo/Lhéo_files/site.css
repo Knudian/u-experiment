@@ -1,0 +1,693 @@
+@charset "UTF-8";
+
+body {
+    position: relative;
+}
+
+#marianne-logo, #lheo-logo {
+    height: 35px;
+    width: auto;
+}
+
+.lheo-logo-pix img {
+    width: 200px;
+}
+
+.lheo-logo-pix {
+    text-align: center;
+}
+
+.navbar-nav>li>a {
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+.l-violetbg,
+.l-greybg {
+    color: black !important;
+}
+
+.l-whitebg {
+    color: #8A74B9 !important;
+}
+
+.glossaire-container a {
+    color: #8A74B9 !important;
+}
+
+.elements-cercle2 {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.elements-extension {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.exemple-offre {
+    font-size: 11px;
+}
+
+#logo-dgefp {
+    margin-top: 20px;
+}
+
+#logo-onisep {
+    margin-top: 25px;
+}
+
+#onisep-logo-caption {
+    text-align: center;
+    font-weight: 400;
+}
+
+/*
+    TOOLTIPS
+*/
+/* d3js tooltips: les tooltips bootstrap ne fonctionnent pas simplement */
+.info-tooltip {
+    background-color: #8a74b9;
+    color: white;
+    border: 0px;
+    position: absolute;
+    text-align: left;
+    max-width: 450px;
+    padding: 10px;
+    font-size: 12px;
+    pointer-events: none;
+}
+/* style tooltips bootstrap */
+.tooltip.top .tooltip-arrow {
+    border-top-color: #8a74b9;
+}
+.tooltip-inner {
+    text-align: left;
+    background-color: #8a74b9;
+    opacity: 1;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    min-width: 320px;
+}
+a.lien-legi + div.tooltip > div.tooltip-inner {
+    text-align: center;
+    min-width: 60px !important;
+}
+.tooltip.in {
+    opacity: 1;
+}
+
+@media (min-width:992px) {
+    #marianne-logo, #lheo-logo {
+        height: 50px;
+        width: auto;
+    }
+    .navbar-nav>li>a {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+}
+
+.devdoc h1, .devdoc h2, .devdoc h3 {
+    font-weight: 300;
+    color: #573C82 !important;
+}
+
+.devdoc {
+    font-family: Lato !important;
+    font-weight: 300;
+}
+
+code {
+    font-family: Lato !important;
+}
+
+.bs-sidebar {
+    width: 212px;
+}
+.bs-sidebar a {
+    font-weight: 400 !important;
+}
+.bs-sidebar .active a {
+    font-weight: 900 !important;
+    font-size: 14px !important;
+}
+.bs-sidebar.affix {
+    position: fixed;
+    top: 40px;
+}
+.glossaire-row {
+    position: relative;
+}
+.glossaire-menu.affix-top {
+    position: absolute;
+    top: 10px;
+}
+
+#leo-main-nav {
+    margin-bottom: 0;
+    background-color: #ffffff;
+    border: none;
+}
+#leo-main-nav ul.nav {
+    margin-top: 10px;
+    font-weight: 400 !important;
+}
+#leo-main-nav ul.nav a {
+    font-weight: 400 !important;
+}
+#hamburger {
+    margin-top: 17px;
+}
+
+.bs-docs-header {
+    position: relative;
+    padding: 30px 0;
+    color: #cdbfe3;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    background-color: #8A74B9;
+}
+.bs-docs-header a {
+    color: rgba(255, 255, 255, .6);
+}
+.bs-docs-header.gdpublic-bloc {
+    text-align: left;
+}
+
+.bs-docs-header {
+    margin-bottom: 40px;
+    font-size: 20px
+}
+
+.bs-docs-header h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.bs-docs-header p {
+    margin-bottom: 0;
+    font-weight: 300;
+    line-height: 1.4
+}
+
+.bs-docs-header .container {
+    position: relative
+}
+
+.bs-docs-header.gdpublic-bloc h1 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.bs-docs-header.gdpublic-bloc p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.bs-docs-header.pro-bloc p {
+    font-size: 24px;
+    font-weight: 300;
+    color: #FFF;
+}
+.bs-docs-header.pro-bloc p.text-glossaire {
+    font-size: 20px;
+}
+@media (min-width:768px) {
+    ul.navbar-nav {
+        height: 55px !important;
+    }
+    .nav .dropdown-menu {
+        box-shadow: none;
+        border-radius: 0;
+        border-top: solid 1px white;
+    }
+    a.dropdown-toggle {
+        margin-bottom: 0 !important;
+        height: 55px !important;
+    }
+    .bs-docs-header {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 24px;
+        height: 223px;
+    }
+    .bs-docs-header.gdpublic-bloc, .bs-docs-header.pro-bloc {
+        padding-top: 10px;
+        height: auto;
+    }
+    .bs-docs-header h1 {
+        font-size: 60px;
+        line-height: 1
+    }
+
+    .bs-docs-header h1, .bs-docs-header p {
+        margin-left: 270px;
+    }
+    .bs-docs-header.gdpublic-bloc h1, .bs-docs-header.gdpublic-bloc p,
+    .bs-docs-header.pro-bloc h1, .bs-docs-header.pro-bloc p {
+        margin-left: 0;
+    }
+    .bs-docs-header.pro-bloc h1.title-only {
+        padding: 45px 0 0 0;
+        font-size: 36px;
+    }
+    .bs-docs-header.pro-bloc h1.titre-glossaire {
+        padding: 15px 0 0 0;
+        font-size: 40px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-langage {
+        font-size: 40px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-changements,
+    .bs-docs-header.dev-bloc h1.titre-telechargements {
+        font-size: 34px;
+    }
+}
+
+@media (min-width:992px) {
+    ul.navbar-nav {
+        height: 70px !important;
+    }
+    a.dropdown-toggle {
+        height: 70px !important;
+    }
+    .bs-docs-header {
+        padding-top: 80px;
+        height: 255px;
+    }
+    .bs-docs-header.gdpublic-bloc,
+    .bs-docs-header.pro-bloc,
+    .bs-docs-header.dev-bloc {
+        height: 325px;
+    }
+    .bs-docs-header h1, .bs-docs-header p {
+        margin-left: 280px;
+    }
+    .bs-docs-header.gdpublic-bloc h1, .bs-docs-header.gdpublic-bloc p,
+    .bs-docs-header.pro-bloc h1, .bs-docs-header.pro-bloc p,
+    .bs-docs-header.dev-bloc h1, .bs-docs-header.dev-bloc p {
+        margin-left: 360px;
+    }
+
+    .bs-docs-header.gdpublic-bloc h1 {
+        font-size: 30px;
+    }
+    .bs-docs-header.gdpublic-bloc p {
+        font-size: 14px;
+        margin-top: 5px;
+
+    }
+    .bs-docs-header.pro-bloc h1.title-only {
+        padding: 110px 10px 0 10px;
+        font-size: 38px;
+    }
+    .bs-docs-header.pro-bloc p {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+    .bs-docs-header.pro-bloc p.text-glossaire {
+        font-size: 16px;
+        padding: 10px 15px 0 15px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-langage {
+        padding-top: 30px;
+        font-size: 44px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-changements,
+    .bs-docs-header.dev-bloc h1.titre-telechargements {
+        font-size: 38px;
+    }
+    .bs-docs-header.dev-bloc .texte-changements,
+    .bs-docs-header.dev-bloc .texte-telechargements {
+        padding: 10px;
+    }
+}
+
+@media (min-width:1200px) {
+    .bs-docs-header {
+        padding-top: 100px;
+        height: 324px;
+    }
+    .bs-docs-header.gdpublic-bloc,
+    .bs-docs-header.pro-bloc,
+    .bs-docs-header.dev-bloc {
+        height: 450px;
+    }
+    .bs-docs-header h1, .bs-docs-header p {
+        margin-left: 380px;
+    }
+    .bs-docs-header.gdpublic-bloc h1, .bs-docs-header.gdpublic-bloc p,
+    .bs-docs-header.pro-bloc h1, .bs-docs-header.pro-bloc p,
+    .bs-docs-header.dev-bloc h1, .bs-docs-header.dev-bloc p {
+        margin-left: 490px;
+    }
+    .bs-docs-header.gdpublic-bloc h1 {
+        font-size: 50px;
+        margin-top: 10px;
+    }
+    .bs-docs-header.gdpublic-bloc p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .bs-docs-header.pro-bloc p {
+        font-size: 32px;
+    }
+    .bs-docs-header.pro-bloc p.text-glossaire {
+        font-size: 18px;
+        padding: 20px 15px 0 15px;
+    }
+    .bs-docs-header.pro-bloc h1.titre-glossaire {
+        padding: 15px 0;
+        font-size: 44px;
+    }
+    .bs-docs-header.pro-bloc h1.title-only {
+        padding: 170px 20px 0 20px;
+        font-size: 42px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-langage {
+        padding-top: 80px;
+        font-size: 48px;
+    }
+    .bs-docs-header.dev-bloc h1.titre-changements,
+    .bs-docs-header.dev-bloc h1.titre-telechargements {
+        padding-top: 40px;
+        font-size: 40px;
+    }
+    .bs-docs-header.dev-bloc .texte-changements,
+    .bs-docs-header.dev-bloc .texte-telechargements {
+        font-size: 26px;
+        padding: 10px;
+    }
+    .lheo-logo-pix img {
+        width: 300px;
+    }
+}
+
+
+#dev-pix, #gdpublic-pix, #pro-pix {
+    overflow: hidden;
+    font-size: 13px !important;
+    background: 0 0 !important;
+}
+
+#dev-pix img, #gdpublic-pix img, #pro-pix img {
+    margin: 0 !important
+}
+
+@media (max-width:767px) {
+    #dev-pix { display: none; }
+}
+@media (max-width:991px) {
+    #gdpublic-pix {
+        display: none;
+    }
+    #pro-pix {
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+    #dev-pix {
+        position: absolute;
+        top: -60px;
+        left: 15px;
+    }
+    #gdpublic-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #pro-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #dev-pix img, #gdpublic-pix img, #pro-pix img {
+        width:  241px;
+        height: 223px;
+    }
+    .bs-sidebar.affix {
+        position: fixed;
+        top: 40px;
+    }
+}
+
+@media (min-width:992px) {
+    #dev-pix {
+        position: absolute;
+        top: -80px;
+        left: 15px;
+    }
+    #gdpublic-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #pro-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #dev-pix img {
+        height: 325px;
+        width: auto;
+    }
+    #gdpublic-pix img {
+        height: 325px;
+        width: auto;
+    }
+    #pro-pix img {
+        height: 325px;
+        width: auto;
+    }
+    .bs-sidebar.affix {
+        position: fixed;
+        top: 40px;
+    }
+}
+
+@media (min-width:1200px) {
+    #dev-pix {
+        position: absolute;
+        top: -100px;
+        left: 15px;
+    }
+    #gdpublic-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #pro-pix {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+    }
+    #dev-pix img {
+        height: 450px;
+        width: auto;
+    }
+    #gdpublic-pix img {
+        height: 450px;
+        width: auto;
+    }
+    #pro-pix img {
+        height: 450px;
+        width: auto;
+    }
+}
+
+.devdoc {
+    /*-webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;*/
+    font-size: 15px;
+}
+
+.devdoc a {
+    font-weight: normal;
+    color: darkslategrey;
+}
+
+.tooltip {
+    font-weight: 400;
+}
+
+/*
+    GLOSSAIRE
+*/
+.glossaire-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: 45px;
+    padding-right: 45px;
+}
+.glossaire-container p {
+    color: #333;
+    font-weight: 300;
+    font-size: 16px;
+}
+.glossaire-box {
+    width: 100%;
+    margin: 30px 0;
+}
+.glossaire-half-box {
+    width: 100%;
+    margin: 30px 0;
+}
+.glossaire-single-box {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.glossaire-box h3,
+.glossaire-half-box h3,
+.glossaire-single-box h3 {
+    color:#573C82;
+    margin-top:10px;
+	margin-bottom:5px;
+}
+
+.glossaire-menu {
+    font-size: 12px !important;
+    width: 40px;
+    padding: 0 !important;
+}
+
+#bloc-34 p,
+#bloc-4-5 p {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+#bloc-4-5 a {
+    font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+    .glossaire-container {
+        margin-left: 100px;
+        margin-right: 15px;
+    }
+    .glossaire-box {
+        width: 33.333333333%;
+        padding: 0 10px;
+    }
+    .glossaire-half-box {
+        width: 50%;
+        padding: 0 10px;
+    }
+    .glossaire-single-box {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/*
+    LANGAGE
+*/
+#introduction {
+    margin-top: 0;
+}
+
+/*
+    MENU latéral qui reste à l'écran (pages langages, glossaire)
+*/
+.side-menu {
+    background-color: white;
+    float: left;
+    z-index: 10000;
+    overflow: auto;
+}
+
+.side-menu a {
+    font-weight: 300 !important;
+    padding: 5px 0px !important;
+    color: black;
+}
+
+.side-menu .active a {
+    font-weight: 900 !important;
+    color: #8A74B9;
+}
+
+.affix-bottom {
+    position: relative !important;
+}
+
+/*
+    PRO / DESCRIPTION
+*/
+.euro-sign {
+    font-size: 800%;
+    font-weight: 300;
+    line-height: 1;
+}
+
+/*
+    PRODUIRE UNE OFFRE
+*/
+.etape-offre {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.etape-box {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.img-box {
+    order: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .etape-box {
+        width: 50%;
+    }
+
+    .img-box {
+        order: 0;
+    }
+}
+
+
+/*
+    FOOTER selectors
+*/
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-box {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (min-width: 600px) {
+    .footer-box {
+        width: 33%;
+        margin: 0;
+        padding-left: 15px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .footer-box {
+        padding-left: 30px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .footer-box {
+        padding-left: 60px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .footer-box {
+        padding-left: 100px;
+    }
+}
