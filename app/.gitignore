@@ -27,3 +27,4 @@
 /.php_cs.cache
 ###< friendsofphp/php-cs-fixer ###
 phpDocumentor.phar
+/.idea/
