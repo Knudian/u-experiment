@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Table(name="users")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface
@@ -103,9 +104,9 @@ class User implements UserInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getResetToken(): string
+    public function getResetToken(): ?string
     {
         return $this->resetToken;
     }
