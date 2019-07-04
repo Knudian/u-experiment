@@ -13,7 +13,7 @@ use function array_unique;
 class User implements UserInterface
 {
     /**
-     * @var integer
+     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -39,7 +39,8 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @var string le token qui servira lors de l'oubli de mot de passe
+     * Le token qui servira lors de l'oubli de mot de passe
+     * @var string|null
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $resetToken;

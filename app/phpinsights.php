@@ -36,6 +36,7 @@ return [
         'templates',
         'var',
         'vendor',
+        'public',
         'src/Migrations',
         '*Repository.php',
         'src/Kernel.php',
@@ -48,7 +49,7 @@ return [
     ],
 
     'remove' => [
-        //  ExampleInsight::class,
+        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class
     ],
 
     'config' => [

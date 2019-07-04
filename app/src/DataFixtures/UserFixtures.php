@@ -8,21 +8,32 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Faker;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Class UserFixtures
+ * @package App\DataFixtures
+ */
 class UserFixtures extends Fixture
 {
+    /**
+     * @var UserPasswordEncoderInterface
+     */
     private $passwordEncoder;
 
+    /**
+     * UserFixtures constructor.
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     */
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function load(ObjectManager $manager)
     {
-        // On configure dans quelles langues nous voulons nos données
-        $faker = Faker\Factory::create('fr_FR');
-
-        // on créé 10 users
+        // Creating 10 users.
         for ($i = 0; $i < 10; $i++) {
             $user = new User();
             $user->setEmail(sprintf('userdemo%d@example.com', $i));
@@ -32,8 +43,6 @@ class UserFixtures extends Fixture
             ));
             $manager->persist($user);
         }
-
         $manager->flush();
-
     }
 }
