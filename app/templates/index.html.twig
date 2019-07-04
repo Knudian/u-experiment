@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Base de Données de Batards</title>
-</head>
-<body>
+{{ include('header.html.twig') }}
+
 <h1>{{ page_title }}</h1>
 
+  <input type="text" placeholder="Rechercher une formation">
 
-</body>
-</html>
+  <div class="accordion">
+
+    <p>Recherche avancée</p>
+
+    <div class="collapse">
+
+      <span>Domaine</span>
+
+      <select>
+
+        <option selected>Domaine</option>
+        {% for domain in domains %}
+          <option value="{{ domain }}">{{ domain }}</option>
+        {% endfor %}
+
+      </select>
+
+      <button type="button" name="button">Rechercher</button>
+      
+    </div>
+
+  </div>
+
+{{ include('footer.html.twig') }}
