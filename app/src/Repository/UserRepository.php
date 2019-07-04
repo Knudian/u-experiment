@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\Repository;
 
@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method User|null findOneByEmail(string $email)
  * @method User|null findOneByResetToken(string $token)
  */
-class UserRepository extends ServiceEntityRepository
+final class UserRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

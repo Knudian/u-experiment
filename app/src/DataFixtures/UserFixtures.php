@@ -1,37 +1,30 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace App\DataFixtures;
 
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
-use Faker;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class UserFixtures
+ *
  * @package App\DataFixtures
  */
-class UserFixtures extends Fixture
+final class UserFixtures extends Fixture
 {
     /**
      * @var UserPasswordEncoderInterface
      */
     private $passwordEncoder;
 
-    /**
-     * UserFixtures constructor.
-     * @param UserPasswordEncoderInterface $passwordEncoder
-     */
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         // Creating 10 users.
         for ($i = 0; $i < 10; $i++) {

@@ -1,6 +1,12 @@
-<?php
+<?php declare(strict_types = 1);
 
-declare(strict_types=1);
+use NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff;
+use ObjectCalisthenics\Sniffs\Metrics\MethodPerClassLimitSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff;
+use SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff;
+use SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\TypeHintDeclarationSniff;
 
 return [
 
@@ -31,10 +37,11 @@ return [
     */
 
     'exclude' => [
+        'var',
         'bin',
         'config',
         'templates',
-        'var',
+        'translations',
         'vendor',
         'public',
         'src/Migrations',
@@ -43,19 +50,27 @@ return [
     ],
 
     'add' => [
-        //  ExampleMetric::class => [
-        //      ExampleInsight::class,
-        //  ]
     ],
 
     'remove' => [
-        \NunoMaduro\PhpInsights\Domain\Sniffs\ForbiddenSetterSniff::class
+        ForbiddenSetterSniff::class,
+        UnusedParameterSniff::class,
+        SuperfluousExceptionNamingSniff::class,
     ],
 
     'config' => [
-        //  ExampleInsight::class => [
-        //      'key' => 'value',
-        //  ],
+        LineLengthSniff::class => [
+            'lineLimit' => 120,
+        ],
+        MethodPerClassLimitSniff::class => [
+            'maxCount' => 100,
+        ],
+        TypeHintDeclarationSniff::class => [
+            'allAnnotationsAreUseful' => true,
+        ],
+        UnusedUsesSniff::class => [
+            'searchAnnotations' => true,
+        ],
     ],
 
 ];

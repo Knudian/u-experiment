@@ -1,13 +1,15 @@
-<?php namespace App\Controller;
+<?php declare(strict_types = 1);
+
+namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Exception;
 use Swift_Mailer;
 use Swift_Message;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -17,9 +19,10 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
  * Class SecurityController
+ *
  * @package App\Controller
  */
-class SecurityController extends AbstractController
+final class SecurityController extends AbstractController
 {
     /**
      * @var UserRepository
@@ -28,6 +31,7 @@ class SecurityController extends AbstractController
 
     /**
      * SecurityController constructor.
+     *
      * @param UserRepository $userRepository
      */
     public function __construct(UserRepository $userRepository)
@@ -47,13 +51,20 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render(
+            'security/login.html.twig',
+            [
+                'last_username' => $lastUsername,
+                'error' => $error,
+            ]
+        );
     }
 
     /**
      * @Route("/logout", name="app_logout")
+     * @return RedirectResponse
      */
-    public function logout()
+    public function logout(): RedirectResponse
     {
         return $this->redirectToRoute('homepage');
     }
@@ -76,10 +87,9 @@ class SecurityController extends AbstractController
         if ($request->isMethod('POST')) {
             $email = $request->request->get('email');
             $entityManager = $this->getDoctrine()->getManager();
-            /** @var User $user */
+            /** @var User|null $user */
             $user = $this->userRepository->findOneByEmail($email);
-
-            if ($user == null) {
+            if (! $user instanceof User) {
                 $this->addFlash('danger', 'Email Inconnu');
                 return $this->redirectToRoute('homepage');
             }
@@ -93,7 +103,7 @@ class SecurityController extends AbstractController
             }
             $url = $this->generateUrl(
                 'app_reset_password',
-                array('token' => $token),
+                ['token' => $token],
                 UrlGeneratorInterface::ABSOLUTE_URL
             );
             $message = (new Swift_Message('Forgot Password'))
@@ -118,18 +128,26 @@ class SecurityController extends AbstractController
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @return RedirectResponse|Response
      */
-    public function resetPassword(Request $request, string $token, UserPasswordEncoderInterface $passwordEncoder)
+    public function resetPassword(
+        Request $request,
+        string $token,
+        UserPasswordEncoderInterface $passwordEncoder)
     {
         if ($request->isMethod('POST')) {
             $entityManager = $this->getDoctrine()->getManager();
-            /** @var User $user */
+            /** @var User|null $user */
             $user = $this->userRepository->findOneByResetToken($token);
-            if ($user == null) {
+            if (! $user instanceof User) {
                 $this->addFlash('danger', 'Token Inconnu');
                 return $this->redirectToRoute('homepage');
             }
             $user->setResetToken(null);
-            $user->setPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
+            $user->setPassword(
+                $passwordEncoder->encodePassword(
+                    $user,
+                    $request->request->get('password')
+                )
+            );
             $entityManager->flush();
             $this->addFlash('notice', 'Mot de passe mis à jour');
             return $this->redirectToRoute('homepage');

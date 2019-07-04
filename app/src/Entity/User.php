@@ -1,4 +1,6 @@
-<?php namespace App\Entity;
+<?php declare(strict_types = 1);
+
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -10,7 +12,7 @@ use function array_unique;
  * @ORM\Table(name="users")
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User implements UserInterface
+final class User implements UserInterface
 {
     /**
      * @var int
@@ -27,7 +29,7 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @var array|string[]
+     * @var array|array<string>
      * @ORM\Column(type="json")
      */
     private $roles = [];
@@ -40,49 +42,35 @@ class User implements UserInterface
 
     /**
      * Le token qui servira lors de l'oubli de mot de passe
+     *
      * @var string|null
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $resetToken;
 
-    /**
-     * @return int|null
-     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return string|null
-     */
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     * @return User
-     */
     public function setEmail(string $email): self
     {
         $this->email = $email;
         return $this;
     }
 
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
     public function getUsername(): string
     {
         return (string) $this->email;
     }
 
     /**
-     * @see UserInterface
+     * @return array|array<string>
      */
     public function getRoles(): array
     {
@@ -93,7 +81,7 @@ class User implements UserInterface
     }
 
     /**
-     * @param array $roles
+     * @param array|array<string> $roles
      * @return User
      */
     public function setRoles(array $roles): self
@@ -102,35 +90,22 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @see UserInterface
-     */
     public function getPassword(): string
     {
         return (string) $this->password;
     }
 
-    /**
-     * @param string $password
-     * @return User
-     */
     public function setPassword(string $password): self
     {
         $this->password = $password;
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getResetToken(): ?string
     {
         return $this->resetToken;
     }
 
-    /**
-     * @param string $resetToken
-     */
     public function setResetToken(?string $resetToken): void
     {
         $this->resetToken = $resetToken;
@@ -138,14 +113,21 @@ class User implements UserInterface
 
     /**
      * Not needed when using the "bcrypt" algorithm in security.yaml
+     *
      * @see UserInterface
      */
-    public function getSalt() {}
+    public function getSalt(): ?string
+    {
+        return null;
+    }
 
     /**
      * If you store any temporary, sensitive data on the user, clear it here
      * with : $this->plainPassword = null;
+     *
      * @see UserInterface
      */
-    public function eraseCredentials() {}
+    public function eraseCredentials(): void
+    {
+    }
 }
