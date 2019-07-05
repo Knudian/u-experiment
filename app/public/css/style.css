@@ -14,7 +14,8 @@ body {
     background: #f7f7f7;
 }
 
-/****/
+/********** HEADER **********/
+/****************************/
 
 .header_container {
     background: #009ec1;
@@ -23,16 +24,17 @@ body {
     justify-content: space-between;
 }
 
-.header_container a {
-}
-
 .header_element {
-    width: 2em;
     padding: 0.5em 1.5em;
 }
 
 .header_element:first-child {
-    background-color: white
+    background-color: white;
+    transition: 0.3s;
+}
+
+.header_element:first-child:hover {
+    padding: 0.5em 2.5em;
 }
 
 .header_logo {
