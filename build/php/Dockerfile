@@ -15,5 +15,5 @@ RUN apt-get install -y libpq-dev \
 RUN docker-php-ext-install pcntl
 # Installation de composer
 RUN curl -sL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
 EXPOSE 9000
