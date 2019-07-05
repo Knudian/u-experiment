@@ -9,9 +9,9 @@
 
     <div class="collapse">
 
-      <span>Domaine</span>
+      <label for="domain">Domaine</label>
 
-      <select>
+      <select name="domain">
 
         <option selected>Domaine</option>
         {% for domain in domains %}
@@ -20,8 +20,19 @@
 
       </select>
 
+      <label for="job">Métier</label>
+
+      <select name="job">
+
+        <option selected>Métier</option>
+        {% for job in jobs %}
+          <option value="{{ job }}">{{ job }}</option>
+        {% endfor %}
+
+      </select>
+
       <button type="button" name="button">Rechercher</button>
-      
+
     </div>
 
   </div>
