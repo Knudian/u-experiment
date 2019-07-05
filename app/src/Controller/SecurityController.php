@@ -2,19 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Repository\UserRepository;
+use App\Services\UserSecurityService;
 use Exception;
-use Swift_Mailer;
-use Swift_Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
@@ -25,18 +19,18 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 final class SecurityController extends AbstractController
 {
     /**
-     * @var UserRepository
+     * @var UserSecurityService
      */
-    private $userRepository;
+    private $userSecurityService;
 
     /**
      * SecurityController constructor.
      *
-     * @param UserRepository $userRepository
+     * @param UserSecurityService $userSecurityService
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserSecurityService $userSecurityService)
     {
-        $this->userRepository = $userRepository;
+        $this->userSecurityService = $userSecurityService;
     }
 
     /**
@@ -70,89 +64,65 @@ final class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/forgotten_password", name="app_forgotten_password")
+     * @Route(path="/forgotten_password",
+     *        name="app_forgotten_password",
+     *        methods={"GET", "POST"})
      * @param Request $request
-     * @param UserPasswordEncoderInterface $encoder
-     * @param Swift_Mailer $mailer
-     * @param TokenGeneratorInterface $tokenGenerator
      * @return Response
+     * @throws Exception
      */
-    public function forgottenPassword(
-        Request $request,
-        UserPasswordEncoderInterface $encoder,
-        Swift_Mailer $mailer,
-        TokenGeneratorInterface $tokenGenerator
-    ): Response
+    public function forgottenPassword(Request $request): Response
     {
-        if ($request->isMethod('POST')) {
-            $email = $request->request->get('email');
-            $entityManager = $this->getDoctrine()->getManager();
-            /** @var User|null $user */
-            $user = $this->userRepository->findOneByEmail($email);
-            if (! $user instanceof User) {
-                $this->addFlash('danger', 'Email Inconnu');
-                return $this->redirectToRoute('homepage');
-            }
-            $token = $tokenGenerator->generateToken();
-            try{
-                $user->setResetToken($token);
-                $entityManager->flush();
-            } catch (Exception $exception) {
-                $this->addFlash('warning', $exception->getMessage());
-                return $this->redirectToRoute('homepage');
-            }
-            $url = $this->generateUrl(
-                'app_reset_password',
-                ['token' => $token],
-                UrlGeneratorInterface::ABSOLUTE_URL
-            );
-            $message = (new Swift_Message('Forgot Password'))
-                ->setFrom('g.ponty@dev-web.io')
-                ->setTo($user->getEmail())
-                ->setBody(
-                    "blablabla voici le token pour reseter votre mot de passe : " . $url,
-                    'text/html'
-                );
-
-            $mailer->send($message);
-            $this->addFlash('notice', 'Mail envoyé');
+        if ($request->getMethod() === 'GET') {
+            return $this->render('security/forgotten_password.html.twig');
+        }
+        $email = $request->request->get('email');
+        try {
+            $user = $this->userSecurityService->forgottenPassword($email);
+        } catch (Exception $exception) {
+            $this->addFlash('warning', $exception->getMessage());
             return $this->redirectToRoute('homepage');
         }
-        return $this->render('security/forgotten_password.html.twig');
+        /*
+
+                $url = $this->generateUrl(
+                    'app_reset_password',
+                    ['token' => $user->getResetToken()],
+                    UrlGeneratorInterface::ABSOLUTE_URL
+                );
+                $message = (new Swift_Message('Forgot Password'))
+                    ->setFrom('g.ponty@dev-web.io')
+                    ->setTo($user->getEmail())
+                    ->setBody(
+                        "blablabla voici le token pour reseter votre mot de passe : " . $url,
+                        'text/html'
+                    );
+
+                $mailer->send($message);
+                */
+        $this->addFlash('notice', 'Mail envoyé');
+        return $this->redirectToRoute('homepage');
     }
 
     /**
-     * @Route("/reset_password/{token}", name="app_reset_password")
+     * @Route(
+     *     path="/reset_password/{token}",
+     *     name="app_reset_password",
+     *     methods={"POST"}
+     * )
      * @param Request $request
      * @param string $token
-     * @param UserPasswordEncoderInterface $passwordEncoder
-     * @return RedirectResponse|Response
+     * @return RedirectResponse
      */
-    public function resetPassword(
-        Request $request,
-        string $token,
-        UserPasswordEncoderInterface $passwordEncoder)
+    public function resetPassword(Request $request, string $token): RedirectResponse
     {
-        if ($request->isMethod('POST')) {
-            $entityManager = $this->getDoctrine()->getManager();
-            /** @var User|null $user */
-            $user = $this->userRepository->findOneByResetToken($token);
-            if (! $user instanceof User) {
-                $this->addFlash('danger', 'Token Inconnu');
-                return $this->redirectToRoute('homepage');
-            }
-            $user->setResetToken(null);
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $request->request->get('password')
-                )
-            );
-            $entityManager->flush();
+        $password = $request->request->get('password');
+        try {
+            $this->userSecurityService->resetPassword($token, $password);
             $this->addFlash('notice', 'Mot de passe mis à jour');
-            return $this->redirectToRoute('homepage');
-        } else {
-            return $this->render('security/reset_password.html.twig', ['token' => $token]);
+        } catch (Exception $exception) {
+            $this->addFlash('danger', 'Token Inconnu');
         }
+        return $this->redirectToRoute('homepage');
     }
 }

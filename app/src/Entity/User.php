@@ -106,9 +106,10 @@ final class User implements UserInterface
         return $this->resetToken;
     }
 
-    public function setResetToken(?string $resetToken): void
+    public function setResetToken(?string $resetToken = null): self
     {
         $this->resetToken = $resetToken;
+        return $this;
     }
 
     /**
