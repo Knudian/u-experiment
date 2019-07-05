@@ -10,6 +10,12 @@ h4,h5,h6,img,ul,ol,li,span,div,button,form,label,input,textarea,select,object {
     border: none;
 }
 
+body {
+    background: #f7f7f7;
+}
+
+/****/
+
 .header_container {
     background: #009ec1;
     display: flex;
@@ -17,6 +23,18 @@ h4,h5,h6,img,ul,ol,li,span,div,button,form,label,input,textarea,select,object {
     justify-content: space-between;
 }
 
+.header_container a {
+}
+
 .header_element {
-    padding: 1.5em;
+    width: 2em;
+    padding: 0.5em 1.5em;
+}
+
+.header_element:first-child {
+    background-color: white
+}
+
+.header_logo {
+    width: 2em;
 }
