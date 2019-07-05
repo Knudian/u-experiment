@@ -6,16 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class MainController extends AbstractController
+final class DefaultController extends AbstractController
 {
     /**
-     * @Route(name="index",path="/")
+     * @Route("/default", name="default")
      * @return Response
      */
     public function index(): Response
     {
-        $page_title = 'La page';
-
-        return $this->render('index.html.twig', ['page_title' => $page_title]);
+        return $this->render('default/index.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
     }
 }

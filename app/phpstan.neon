@@ -1,2 +1,5 @@
 includes:
     - vendor/phpstan/phpstan-symfony/extension.neon
+parameters:
+    excludes_analyse:
+        - %rootDir%/src/Migrations/*.php
