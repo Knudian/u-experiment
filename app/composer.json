@@ -31,6 +31,7 @@
         "symfony/yaml": "4.3.*"
     },
     "require-dev": {
+        "behat/behat": "^3.5",
         "doctrine/doctrine-fixtures-bundle": "^3.2",
         "fzaninotto/faker": "^1.8",
         "nunomaduro/phpinsights": "^1.7",
