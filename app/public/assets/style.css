@@ -1,3 +1,22 @@
+/********** RESET **********/
+/***************************/
+
+html,body,header,main,footer,nav,aside,section,a,p,pre,code,table,td,th,td,tr,h1,h2,h3,
+h4,h5,h6,img,ul,ol,li,span,div,button,form,label,input,textarea,select,object {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+}
+
 .header_container {
-    background: red;
+    background: #009ec1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_element {
+    padding: 1.5em;
 }
