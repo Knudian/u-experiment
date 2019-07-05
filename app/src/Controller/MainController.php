@@ -20,12 +20,17 @@ class MainController extends AbstractController
           'Simon appartient à Maxime',
           'Mais ils ne le savent pas ...'
         ];
+        $jobs = [
+          '1',
+          '2'
+        ];
 
         return $this->render(
           'index.html.twig',
           [
             'page_title' => $page_title,
-            'domains' => $domains
+            'domains' => $domains,
+            'jobs' => $jobs
           ]
         );
     }
