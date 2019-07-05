@@ -7,7 +7,8 @@
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 
         {% block stylesheets %}
-        <link rel="stylesheets" href="../public/assets/style.css">
+        <link href="{{ asset('../public/assets/style.css') }}" rel="stylesheet"/>
+       <!-- <link rel="stylesheets" href="../public/assets/style.css"/>-->
         {% endblock %}
         <title>Site de ses morts !</title>
     </head>
