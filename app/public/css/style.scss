@@ -1,6 +1,8 @@
 /********** RESET **********/
 /***************************/
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 html,body,header,main,footer,nav,aside,section,a,p,pre,code,table,td,th,td,tr,h1,h2,h3,
 h4,h5,h6,img,ul,ol,li,span,div,button,form,label,input,textarea,select,object {
     margin: 0;
@@ -22,6 +24,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     .header_element {
         padding: 0.3em 1.5em;
         &:first-child {
@@ -35,13 +38,55 @@ body {
             width: 2.5em;
         }
         .header_profil {
+            cursor: pointer;
             color: white;
             padding: 0.5em;
             border-radius: 50%;
             transition: 0.2s;
             &:hover {
-                background-color: rgba(255,255,255,0.3);
+                background-color: #4dbbd4;
             }
         }
     }
+    .profil_dropdown {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        @media screen and (min-width:1000px) {
+            width: auto;
+        }
+        .profil_element {
+            padding: 2em 5em;
+            width: 100%;
+            background-color: #009ec1;
+            text-align: center;
+            color: white;
+            font-family: "Open Sans";
+            font-size: 1.5em;
+            transition: 0.3s;
+            @media screen and (min-width:1000px) {
+                width: 6em;
+                padding: 0.8em 5em;
+                font-size: 1em;
+            }
+            &:first-child {
+                border-bottom: 2px solid #0093b4;
+            }
+            &:hover {
+                background-color: #4dbbd4;
+            }
+        }
+    }
+}
+
+.flexdisplay {
+    display: flex;
+}
+
+.nonedisplay {
+    display: none;
 }

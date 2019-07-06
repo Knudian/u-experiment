@@ -1,5 +1,6 @@
 /********** RESET **********/
 /***************************/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html, body, header, main, footer, nav, aside, section, a, p, pre, code, table, td, th, td, tr, h1, h2, h3,
 h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, select, object {
   margin: 0;
@@ -26,6 +27,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .header_container .header_element {
@@ -47,6 +49,7 @@ body {
 }
 
 .header_container .header_element .header_profil {
+  cursor: pointer;
   color: white;
   padding: 0.5em;
   border-radius: 50%;
@@ -55,6 +58,67 @@ body {
 }
 
 .header_container .header_element .header_profil:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #4dbbd4;
+}
+
+.header_container .profil_dropdown {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .header_container .profil_dropdown {
+    width: auto;
+  }
+}
+
+.header_container .profil_dropdown .profil_element {
+  padding: 2em 5em;
+  width: 100%;
+  background-color: #009ec1;
+  text-align: center;
+  color: white;
+  font-family: "Open Sans";
+  font-size: 1.5em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 1000px) {
+  .header_container .profil_dropdown .profil_element {
+    width: 6em;
+    padding: 0.8em 5em;
+    font-size: 1em;
+  }
+}
+
+.header_container .profil_dropdown .profil_element:first-child {
+  border-bottom: 2px solid #0093b4;
+}
+
+.header_container .profil_dropdown .profil_element:hover {
+  background-color: #4dbbd4;
+}
+
+.flexdisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nonedisplay {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
