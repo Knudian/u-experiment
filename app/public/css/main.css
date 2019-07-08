@@ -18,15 +18,9 @@ body {
 /****************************/
 .header_container {
   background: #009ec1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -36,7 +30,6 @@ body {
 
 .header_container .header_element:first-child {
   background-color: white;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -53,7 +46,6 @@ body {
   color: white;
   padding: 0.5em;
   border-radius: 50%;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -66,17 +58,11 @@ body {
   position: absolute;
   width: 100%;
   top: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   right: 0;
+  z-index: 99;
 }
 
 @media screen and (min-width: 1000px) {
@@ -105,12 +91,11 @@ body {
 
 .header_container .profil_dropdown .profil_element {
   color: white;
-  padding: 2em 0;
+  padding: 1.5em 0;
   width: 100%;
   background-color: #009ec1;
   text-align: center;
   font-size: 1.5em;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -127,35 +112,102 @@ body {
 }
 
 .flexdisplay {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .nonedisplay {
   display: none;
 }
-<<<<<<< HEAD
-/*# sourceMappingURL=main.css.map */
-=======
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 100px 0;
+}
+
+.container .h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 100px 0;
+  padding: 0 20px;
+}
+
+.container .text {
+  max-width: 770px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.search-container {
+  width: 100%;
+  background-color: #009EC1;
+  display: flex;
+  padding: 20px;
+}
+
+.search-container #searchField {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  min-height: 44px;
+  border-radius: 22px;
+  display: flex;
+  margin: auto;
+}
+
+.search-container #searchField #searchBar {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  color: #FFFFFF;
+  padding: 0 22px;
+}
+
+.search-container #searchField .material-icons {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+}
+
+.accordion {
+  position: relative;
+  width: 100%;
+}
+
+.accordion .collapsed-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+}
+
+.accordion .collapsed {
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion .collapsed:not(.show) {
+  display: none;
+}
 
 /********** REGISTER **********/
 /******************************/
 .register_container {
   font-family: 'Open Sans';
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 1000px) {
@@ -163,39 +215,25 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     background-color: white;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
   }
   .register_container:hover {
-    -webkit-box-shadow: 0px 0px 10px 0px #656565;
-            box-shadow: 0px 0px 10px 0px #656565;
+    box-shadow: 0px 0px 10px 0px #656565;
   }
 }
 
 .register_container .register_title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   width: 100%;
   cursor: pointer;
 }
 
 .register_container .register {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: center;
+  align-items: center;
   display: flex;
   text-align: center;
   padding: 1em 0;
@@ -207,7 +245,6 @@ body {
   background-color: #009ec1;
   color: white;
   font-size: 1em;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -220,7 +257,6 @@ body {
   color: black;
   font-size: 0.7em;
   border-bottom: 0.5px solid #c9c7c7;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -230,22 +266,13 @@ body {
 
 #registration_form {
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 #registration_form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 1em 0 1em;
 }
 
@@ -264,19 +291,12 @@ body {
 }
 
 #registration_form form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 #registration_form form button {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   margin: 1em 0 2em;
 }
 
@@ -292,11 +312,10 @@ body {
 
 #registration_form input {
   padding: 0.5em 1em;
-  width: 12em;
+  width: 100%;
   color: black;
   border-radius: 3em;
   font-size: 1.2em;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: text;
   border: 1px solid #646463;
@@ -316,28 +335,30 @@ body {
 
 /*********** MAIN ***********/
 /****************************/
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
 .btn {
   padding: 0.5em 5em;
   color: white;
   border-radius: 3em;
   font-size: 1.2em;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #009ec100;
+  background-color: rgba(0, 158, 193, 0);
 }
 
 .btn.btn_blue {
-  background-color: #009ec1;
-  border: 1px solid #009ec1;
+  background-color: #009EC1;
+  border: 1px solid #009EC1;
 }
 
 .btn.btn_blue:hover {
   color: #009ec1;
-  background-color: #009ec100;
+  background-color: rgba(0, 158, 193, 0);
 }
-/*# sourceMappingURL=main.css.map */
->>>>>>> 039968ea177c2e0f5c456322b9eb6ff7f3115aff

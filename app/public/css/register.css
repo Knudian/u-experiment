@@ -151,7 +151,7 @@
 
 #registration_form input {
   padding: 0.5em 1em;
-  width: 12em;
+  width: 100%;
   color: black;
   border-radius: 3em;
   font-size: 1.2em;

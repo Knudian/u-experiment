@@ -2,15 +2,9 @@
 /****************************/
 .header_container {
   background: #009ec1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
@@ -20,7 +14,6 @@
 
 .header_container .header_element:first-child {
   background-color: white;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -37,7 +30,6 @@
   color: white;
   padding: 0.5em;
   border-radius: 50%;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -50,17 +42,11 @@
   position: absolute;
   width: 100%;
   top: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   right: 0;
+  z-index: 99;
 }
 
 @media screen and (min-width: 1000px) {
@@ -89,12 +75,11 @@
 
 .header_container .profil_dropdown .profil_element {
   color: white;
-  padding: 2em 0;
+  padding: 1.5em 0;
   width: 100%;
   background-color: #009ec1;
   text-align: center;
   font-size: 1.5em;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -111,12 +96,9 @@
 }
 
 .flexdisplay {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .nonedisplay {
   display: none;
 }
-/*# sourceMappingURL=header.css.map */

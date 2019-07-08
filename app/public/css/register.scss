@@ -15,7 +15,7 @@
         background-color: white;
         transition: 0.3s;
         &:hover {
-            box-shadow: 0px 0px 10px 0px #656565;
+            box-shadow: 0px 0px 10px 0px $darkgrey;
         }
     }
     .register_title {
@@ -34,7 +34,7 @@
         text-transform: uppercase;
     }
     .register_active {
-        background-color: #009ec1;
+        background-color: $lightblue;
         color: white;
         font-size: 1em;
         transition: 0.3s;
@@ -91,7 +91,7 @@
 
 #registration_form input {
     padding: 0.5em 1em;
-    width: 12em;
+    width: 100%;
     color: black;
     border-radius: 3em;
     font-size: 1.2em;
@@ -99,8 +99,8 @@
     cursor: text;
     border: 1px solid #646463;
     &:focus {
-        border: 1px solid #009ec1;
-        color: #009ec1;
+        border: 1px solid $lightblue;
+        color: $lightblue;
         outline: none;
     }
     @media screen and (min-width:1000px) {

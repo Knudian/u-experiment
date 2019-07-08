@@ -27,14 +27,14 @@ $black: #000000;
     transition: 0.3s;
     cursor: pointer;
     &:hover {
-        background-color: #009ec100;
+        background-color: rgba(0,158,193,0);
     }
     &.btn_blue {
-        background-color: #009ec1;
-        border: 1px solid #009ec1;
+        background-color: $lightblue;
+        border: 1px solid $lightblue;
         &:hover {
             color: #009ec1;
-            background-color: #009ec100;
+            background-color: rgba(0,158,193,0);
         }
     }
 }
