@@ -3,14 +3,19 @@
 {% block body %}
 
     <div class="register_container">
-        <h1>Inscription</h1>
+        <div class="register_title">
+            <h2 id="Connexion" class="register register_not_active">Connexion</h2>
+            <h2 id="Inscription" class="register register_active">Inscription</h2>
+        </div>
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword) }}
+        <div id="registration_form">
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
 
-            <button class="btn">Inscription</button>
-        {{ form_end(registrationForm) }}
+                <button class="btn btn_blue width_btn">M'inscrire</button>
+            {{ form_end(registrationForm) }}
+        </div>
     </div>
 
 {% endblock %}
