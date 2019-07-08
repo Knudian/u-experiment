@@ -25,7 +25,7 @@ services:
         depends_on:
             - php
         volumes:
-            - "${VOLUME_APP}:/var/www/html"
+            - "${VOLUME_APP}/app:/var/www/html"
             - "${VOLUME_LOGS}/nginx:/var/log/nginx"
             - "./conf/nginx/nginx.conf:/etc/nginx/nginx.conf"
             - "./conf/nginx/default.conf:/etc/nginx/conf.d/default.conf"
