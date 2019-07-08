@@ -1,0 +1,13 @@
+.accordion {
+    position: relative;
+    .collapsed {
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        &:not(.show) {
+            display: none;
+        }
+    }
+}

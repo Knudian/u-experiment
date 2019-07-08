@@ -26,3 +26,9 @@ html.addEventListener("click", function(event) {
     profilDropdown.classList.remove("flexdisplay");
   }
 });
+
+
+function toggleClass(selector,className) {
+    let node = document.querySelector(selector);
+    node.classList.toggle(className);
+}

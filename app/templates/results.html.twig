@@ -1,0 +1,136 @@
+{% include 'header.html.twig' %}
+
+
+<input type="text" name="" value="" placeholder="Rechercher">
+
+<div class="wrapper">
+
+    <div class="container">
+
+        <i class="material-icons">filter_list</i>
+        <p>Filtres avancés</p>
+
+        <label for="domain">Domaine</label>
+        <select name="domain">
+
+            <option selected>Domaine</option>
+            {% for domain in list_domain %}
+            <option value="{{ domain }}">{{ domain }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="job">Métier</label>
+        <select name="job">
+
+            <option selected>Métier</option>
+            {% for job in list_job %}
+            <option value="{{ job }}">{{ job }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="lvlin">Niveau d'entrée</label>
+        <select name="lvlin">
+
+            <option selected>Niveau</option>
+            {% for lvlin in list_lvlin %}
+            <option value="{{ lvlin }}">{{ lvlin }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="lvlout">Niveau de sortie</label>
+        <select name="lvlout">
+
+            <option selected>Niveau</option>
+            {% for lvlout in list_lvlout %}
+            <option value="{{ lvlout }}">{{ lvlout }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="time">Durée (heure)</label>
+        <input type="number" name="time">
+
+
+
+        <div class="group">
+            <span>Statut</span>
+            <label for="employee">Salarié</label>
+            <input type="checkbox" name="employee">
+
+            <label for="unemployed">Demandeur d'emploi</label>
+            <input type="checkbox" name="unemployed">
+        </div>
+
+
+
+        <label for="cpf">Formation éligible CPF</label>
+        <input type="checkbox" name="cpf">
+
+
+
+        <label for="started">Afficher les formations déjà commencées</label>
+        <input type="checkbox" name="started">
+
+
+
+        <button class="button" type="button" name="button">Rechercher</button>
+    </div>
+
+    <div class="container">
+
+        <div class="toolbar">
+            <span>{{ nbResults }}</span>
+
+            <select name="sorting">
+
+                <option selected>Trier par</option>
+                {% for sorting in list_sorting %}
+                <option value="{{ sorting }}">{{ sorting }}</option>
+                {% endfor %}
+
+            </select>
+
+            <button type="button" name="button">A-Z</button>
+
+            <button type="button" name="button">
+                <i class="material-icons">vertical_align_bottom</i>
+            </button>
+        </div>
+
+        <div class="listing">
+            {% for formation in list_formation %}
+            <div class="formation">
+
+                {{ formation.title }}
+                {{ formation.seats }}
+                {{ formation.session_start }}
+                {{ formation.session_end }}
+                {{ formation.pta }}
+                {{ formation.certif }}
+                {{ formation.domain }}
+                {{ formation.training_organiz }}
+                {{ formation.city  }}
+                {{ formation.departement }}
+
+                <i class="material-icons">search</i>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include('footer.html.twig') %}
