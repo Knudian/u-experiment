@@ -25,13 +25,6 @@ final class CodeNsf
      */
     private $formation;
 
-    /**
-     * @var DomaineFormation
-     * @ORM\ManyToOne(targetEntity="App\Entity\DomaineFormation", inversedBy="codeNsfs")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $domaineFormation;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -45,17 +38,6 @@ final class CodeNsf
     public function setFormation(string $formation): self
     {
         $this->formation = $formation;
-        return $this;
-    }
-
-    public function getDomaineFormation(): ?DomaineFormation
-    {
-        return $this->domaineFormation;
-    }
-
-    public function setDomaineFormation(?DomaineFormation $domaineFormation): self
-    {
-        $this->domaineFormation = $domaineFormation;
         return $this;
     }
 }
