@@ -46,6 +46,7 @@
 }
 
 .header_container .profil_dropdown {
+  font-family: "Open Sans";
   position: absolute;
   width: 100%;
   top: 100%;
@@ -68,13 +69,30 @@
   }
 }
 
+.header_container .profil_dropdown .profil_element_header {
+  color: white;
+  border-bottom: 1px solid white;
+  font-size: 1em;
+  padding: 1em 0;
+  width: 100%;
+  background-color: #003853;
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .header_container .profil_dropdown .profil_element_header {
+    font-size: 0.8em;
+    padding: 0.5em 0;
+    font-size: 0.8em;
+  }
+}
+
 .header_container .profil_dropdown .profil_element {
+  color: white;
   padding: 2em 0;
   width: 100%;
   background-color: #009ec1;
   text-align: center;
-  color: white;
-  font-family: "Open Sans";
   font-size: 1.5em;
   -webkit-transition: 0.3s;
   transition: 0.3s;
