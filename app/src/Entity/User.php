@@ -41,6 +41,18 @@ final class User implements UserInterface
     private $password;
 
     /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $confirmationPassword;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $siret;
+
+    /**
      * Le token qui servira lors de l'oubli de mot de passe
      *
      * @var string|null
@@ -130,5 +142,27 @@ final class User implements UserInterface
      */
     public function eraseCredentials(): void
     {
+    }
+
+    public function getSiret(): ?string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(string $siret): self
+    {
+        $this->siret = $siret;
+        return $this;
+    }
+
+    public function getConfirmationPassword(): ?string
+    {
+        return $this->confirmationPassword;
+    }
+
+    public function setConfirmationPassword(string $confirmationPassword): self
+    {
+        $this->confirmationPassword = $confirmationPassword;
+        return $this;
     }
 }

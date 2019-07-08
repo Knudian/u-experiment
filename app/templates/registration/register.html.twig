@@ -8,7 +8,8 @@
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword) }}
-        {#{{ form_row(registrationForm.siret) }}#}
+    {{ form_row(registrationForm.confirmationPassword) }}
+    {{ form_row(registrationForm.siret) }}
 
         <button class="btn">Register</button>
     {{ form_end(registrationForm) }}
