@@ -12,11 +12,18 @@ use Doctrine\ORM\Mapping as ORM;
 class Commune
 {
     /**
-     * Code INSEE de la commune
+     * @var int
      * @ORM\Id()
-     * @ORM\Column(type="string", length=5)
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=5)
+     */
+    private $codeInsee;
 
     /**
      * @var string
@@ -43,14 +50,22 @@ class Commune
      */
     private $departement;
 
-    public function getId(): ?string
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setId(string $id): self
+    public function getCodeInsee(): string
     {
-        $this->id = $id;
+        return $this->codeInsee;
+    }
+
+    public function setCodeInsee(string $codeInsee): self
+    {
+        if (strlen($codeInsee) < 5) {
+            $codeInsee = "0" . $codeInsee;
+        }
+        $this->codeInsee = $codeInsee;
         return $this;
     }
 
@@ -70,8 +85,11 @@ class Commune
         return $this->codeCanton;
     }
 
-    public function setCodeCanton(string $codeCanton): self
+    public function setCodeCanton(?string $codeCanton): self
     {
+        if (is_null($codeCanton)) {
+            $codeCanton = "1";
+        }
         $this->codeCanton = $codeCanton;
         return $this;
     }
@@ -83,6 +101,10 @@ class Commune
 
     public function setCodePostal(string $codePostal): self
     {
+
+        if (strlen($codePostal) < 5) {
+            $codePostal = "0" . $codePostal;
+        }
         $this->codePostal = $codePostal;
         return $this;
     }
