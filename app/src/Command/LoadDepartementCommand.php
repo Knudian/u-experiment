@@ -2,16 +2,14 @@
 
 namespace App\Command;
 
-use App\Entity\Administrative\Commune;
-use App\Entity\Administrative\Country;
+use App\Command\Dataset\DepartementList;
 use App\Entity\Administrative\Departement;
-use App\Entity\Administrative\Region;
+use App\Repository\Administrative\RegionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use App\Repository\Administrative\RegionRepository;
 
 class LoadDepartementCommand extends Command
 {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
+use App\Command\Dataset\RegionList;
 use App\Entity\Administrative\Country;
 use App\Entity\Administrative\Region;
 use Doctrine\ORM\EntityManagerInterface;

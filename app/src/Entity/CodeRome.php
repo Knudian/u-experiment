@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @see https://public.opendatasoft.com/explore/dataset/pole-emploi-rome-arborescence-thematique/table/
- * @ApiResource()
+ * @ApiResource(itemOperations={"GET"})
  * @ORM\Entity(repositoryClass="App\Repository\CodeRomeRepository")
  */
-final class CodeRome
+class CodeRome
 {
     /**
      * @var string

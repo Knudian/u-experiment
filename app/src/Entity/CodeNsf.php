@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @see https://public.opendatasoft.com/explore/dataset/codes-nsf/table/?flg=fr
- * @ApiResource()
+ * @ApiResource(itemOperations={"GET"})
  * @ORM\Entity(repositoryClass="App\Repository\CodeNsfRepository")
  */
-final class CodeNsf
+class CodeNsf
 {
     /**
      * @var int
@@ -28,6 +28,12 @@ final class CodeNsf
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+        return $this;
     }
 
     public function getFormation(): ?string

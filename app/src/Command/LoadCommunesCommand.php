@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Command\Dataset\CommuneList;
 use App\Entity\Administrative\Commune;
 use App\Repository\Administrative\DepartementRepository;
 use Doctrine\ORM\EntityManagerInterface;
