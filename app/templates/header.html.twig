@@ -6,11 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Site de ses morts !</title>
     </head>
     <body>
         <header class="header_container">
-            <a class="header_element" href="#"><img class="header_logo" src="{{ asset('img/Wize_Logo.png') }}" alt="Logo" title="Logo"></a>
-            <a class="header_element" href="#"><img class="header_profil" src="" alt="Profil" title="Profil"></a>
+            <a class="header_element" href="/"><img class="header_logo" src="{{ asset('img/Wise_Logo.png') }}" alt="Wise Logo" title="Wise Logo"></a>
+            <div class="header_element" role="button" href=""><i class="header_profil material-icons" alt="Profil" title="Profil">person</i></div>
+            <div class="profil_dropdown">
+                <a class="profil_element connexion" href="">Connexion</a>
+                <a class="profil_element Inscription" href="/register">Inscription</a>
+            </div>
         </header>
