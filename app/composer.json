@@ -32,6 +32,7 @@
     },
     "require-dev": {
         "behat/behat": "^3.5",
+        "behat/symfony2-extension": "^2.1",
         "doctrine/doctrine-fixtures-bundle": "^3.2",
         "fzaninotto/faker": "^1.8",
         "nunomaduro/phpinsights": "^1.7",
