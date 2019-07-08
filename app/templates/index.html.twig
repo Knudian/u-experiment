@@ -1,40 +1,167 @@
 {% include 'header.html.twig' %}
-<h1>{{ page_title }}</h1>
 
-  <input type="text" placeholder="Rechercher une formation">
 
-  <div class="accordion">
 
-    <p>Recherche avancée</p>
+<div class="container">
 
-    <div class="collapse">
+    <h1>{{ page_title }}</h1>
 
-      <label for="domain">Domaine</label>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-      <select name="domain">
+</div>
 
-        <option selected>Domaine</option>
-        {% for domain in domains %}
-          <option value="{{ domain }}">{{ domain }}</option>
-        {% endfor %}
 
-      </select>
 
-      <label for="job">Métier</label>
+<div class="container">
 
-      <select name="job">
 
-        <option selected>Métier</option>
-        {% for job in jobs %}
-          <option value="{{ job }}">{{ job }}</option>
-        {% endfor %}
 
-      </select>
+    <div class="search-container">
+        <div id="searchField">
+            <input id="searchBar" type="text" placeholder="Rechercher une formation">
+            <i class="material-icons">search</i>
+        </div>
+    </div>
 
-      <button type="button" name="button">Rechercher</button>
+
+
+    <div class="accordion">
+
+
+
+        <button class="collapsed-button">
+            <p class="button-title">Recherche avancée</p>
+            <i class="material-icons">keyboard_arrow_down</i>
+        </button>
+
+
+
+        <div class="collapsed">
+
+
+
+            <label for="domain">Domaine</label>
+            <select name="domain">
+
+                <option selected>Domaine</option>
+                {% for domain in list_domain %}
+                <option value="{{ domain }}">{{ domain }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="job">Métier</label>
+            <select name="job">
+
+                <option selected>Métier</option>
+                {% for job in list_job %}
+                <option value="{{ job }}">{{ job }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="lvlin">Niveau d'entrée</label>
+            <select name="lvlin">
+
+                <option selected>Niveau</option>
+                {% for lvlin in list_lvlin %}
+                <option value="{{ lvlin }}">{{ lvlin }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="lvlout">Niveau de sortie</label>
+            <select name="lvlout">
+
+                <option selected>Niveau</option>
+                {% for lvlout in list_lvlout %}
+                <option value="{{ lvlout }}">{{ lvlout }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="time">Durée (heure)</label>
+            <input type="number" name="time">
+
+
+
+            <div class="group">
+                <span>Statut</span>
+                <label for="employee">Salarié</label>
+                <input type="checkbox" name="employee">
+
+                <label for="unemployed">Demandeur d'emploi</label>
+                <input type="checkbox" name="unemployed">
+            </div>
+
+
+
+            <label for="cpf">Formation éligible CPF</label>
+            <input type="checkbox" name="cpf">
+
+
+
+            <label for="started">Afficher les formations déjà commencées</label>
+            <input type="checkbox" name="started">
+
+
+
+            <button class="button" type="button" name="button">Rechercher</button>
+
+
+
+        </div>
 
     </div>
 
-  </div>
+</div>
+
+
+
+<div class="container">
+
+
+
+    <div class="col">
+
+        <h2>Derniers ajouts</h2>
+
+        {% for formation in lastAdded %}
+        {% if loop.index < 4 %}
+        {{ formation.date }}
+        {{ formation.title }}
+        {{ formation.domain }}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+
+    <div class="col">
+
+        <h2>Dernières modifications</h2>
+
+        {% for formation in lastUpdated %}
+        {% if loop.index < 4 %}
+        {{ formation.date }}
+        {{ formation.title }}
+        {{ formation.domain }}
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+
+</div>
 
 {% include('footer.html.twig') %}
