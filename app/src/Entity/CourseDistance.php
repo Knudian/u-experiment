@@ -7,12 +7,12 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\RecruitmentStatusRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CourseDistanceRepository")
  */
-class RecruitmentStatus
+class CourseDistance
 {
     /**
-     * @var id
+     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -21,7 +21,7 @@ class RecruitmentStatus
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
