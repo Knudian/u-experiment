@@ -24,25 +24,32 @@ body {
     background-color: #f7f7f7;
 }
 
-input,
+input:not([type="checkbox"]):not(#searchBar),
 select {
     min-height: 44px;
     border-radius: 22px;
+    outline: none;
+    padding: 0 11px;
+    background-color: $lightgrey;
 }
 
 .btn {
     padding: 0.5em 5em;
-    color: white;
+    color: $lightgrey;
     border-radius: 3em;
+    border: 1px solid $lightgrey;
     font-size: 1.2em;
     transition: 0.3s;
     cursor: pointer;
+    background-color: transparent;
     &:hover {
-        background-color: rgba(0,158,193,0);
+        background-color: $lightgrey;
+        color: $black;
     }
     &.btn_blue {
         background-color: $lightblue;
         border: 1px solid $lightblue;
+        color: $white;
         &:hover {
             color: #009ec1;
             background-color: rgba(0,158,193,0);
