@@ -7,12 +7,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\RecruitmentStatusRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\GradeRepository")
  */
-class RecruitmentStatus
+class Grade
 {
     /**
-     * @var id
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -20,14 +19,31 @@ class RecruitmentStatus
     private $id;
 
     /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    private $level;
+
+    /**
      * @var string
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getLevel(): ?int
+    {
+        return $this->level;
+    }
+
+    public function setLevel(int $level): self
+    {
+        $this->level = $level;
+        return $this;
     }
 
     public function getName(): ?string
