@@ -1,6 +1,7 @@
 {% include 'header.html.twig' %}
 
-
+<main id="home">
+    
 
 <div class="container">
 
@@ -31,12 +32,13 @@
 
         <button class="collapsed-button" onclick="toggleClass('.collapsed','show')">
             <p class="button-title">Recherche avancée</p>
-            <i class="material-icons">keyboard_arrow_down</i>
+            <i class="material-icons button-icon">keyboard_arrow_down</i>
         </button>
 
 
 
         <div class="collapsed">
+            <div class="filters">
 
 
 
@@ -121,6 +123,7 @@
         </div>
 
     </div>
+</div>
 
 </div>
 
@@ -132,13 +135,15 @@
 
     <div class="col">
 
-        <h2>Derniers ajouts</h2>
+        <h2 class="h2">Derniers ajouts</h2>
 
         {% for formation in lastAdded %}
         {% if loop.index < 4 %}
-        {{ formation.date }}
-        {{ formation.title }}
-        {{ formation.domain }}
+        <div class="card">
+            <span>{{ formation.domain }}</span>
+            <p>{{ formation.title }}</p>
+            <span>{{ formation.date }}</span>
+        </div>
         {% endif %}
         {% endfor %}
 
@@ -148,13 +153,15 @@
 
     <div class="col">
 
-        <h2>Dernières modifications</h2>
+        <h2 class="h2">Dernières modifications</h2>
 
         {% for formation in lastUpdated %}
         {% if loop.index < 4 %}
-        {{ formation.date }}
-        {{ formation.title }}
-        {{ formation.domain }}
+        <div class="card">
+            <span>{{ formation.domain }}</span>
+            <p>{{ formation.title }}</p>
+            <span>{{ formation.date }}</span>
+        </div>
         {% endif %}
         {% endfor %}
 
@@ -163,5 +170,7 @@
 
 
 </div>
+
+</main>
 
 {% include('footer.html.twig') %}
