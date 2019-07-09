@@ -2,18 +2,26 @@
 
 {% block body %}
 
-    <div class="register_container">
-        <div class="register_title">
-            <h2 id="Connexion" class="register register_not_active">Connexion</h2>
-            <h2 id="Inscription" class="register register_active">Inscription</h2>
+    <div class="forms_container">
+        <div class="forms_title">
+            <h2 id="login" class="forms forms_active">Connexion</h2>
+            <h2 id="registration" class="forms forms_not_active">Inscription</h2>
         </div>
 
-        <div id="registration_form">
+        <div id="registration_form" class="section_not_active">
             {{ form_start(registrationForm) }}
                 {{ form_row(registrationForm.email) }}
                 {{ form_row(registrationForm.plainPassword) }}
 
                 <button class="btn btn_blue width_btn">M'inscrire</button>
+            {{ form_end(registrationForm) }}
+        </div>
+        <div id="login_form" class="section_active">
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+
+                <button class="btn btn_blue width_btn">Me connecter</button>
             {{ form_end(registrationForm) }}
         </div>
     </div>
