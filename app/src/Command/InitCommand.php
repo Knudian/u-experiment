@@ -32,6 +32,8 @@ class InitCommand extends Command
             ['command' => 'app:load:regions'],
             ['command' => 'app:load:departements'],
             ['command' => 'app:load:communes'],
+            ['command' => 'app:load:code-nsf'],
+            ['command' => 'app:load:code-rome'],
             ['command' => 'lheo:load:recruitment-perimeter'],
             ['command' => 'lheo:load:recruitment-status'],
         ];
