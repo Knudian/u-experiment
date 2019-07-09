@@ -4,19 +4,30 @@ $white: #FFFFFF;
 $lightgrey: #C9C7C7;
 $darkgrey: #646463;
 $black: #000000;
+$desktop: 1000px;
 
 @import "reset.scss";
 @import "header.scss";
 @import "home.scss";
-@import "results.scss";
+@import "trainingResults.scss";
 @import "register.scss";
-
+@import "trainingDetails.scss";
 
 /*********** MAIN ***********/
 /****************************/
 * {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+input,
+select {
+    min-height: 44px;
+    border-radius: 22px;
 }
 
 .btn {

@@ -1,13 +1,14 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 100px 0;
+#home {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 100px 0;
         .h1 {
             font-size: 40px;
             font-weight: bold;
-            margin: 0 0 100px 0;
+            margin: 100px 0 100px 0;
             padding: 0 20px;
         }
         .text {
@@ -15,58 +16,97 @@
             padding: 0 20px;
             text-align: center;
         }
-}
+        &:nth-child(2) {
+            position: sticky;
+            top: 0;
+        }
+        &:nth-child(3) {
+            @media screen and (min-width: $desktop) {
+                flex-direction: row;
+                justify-content: space-around;
+                .col {
+                    width: 50%;
+                    max-width: 550px;
+                    .card {
+                        background-color: $white;
+                        padding: 20px;
+                        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+            }
+            .h2 {
+                text-align: center;
+                margin: 0 0 50px 0;
+            }
+        }
+    }
 
-.search-container {
-    width: 100%;
-    background-color: $lightblue;
-    display: flex;
-    padding: 20px;
-    #searchField {
+    .search-container {
         width: 100%;
-        max-width: 500px;
-        overflow: hidden;
-        min-height: 44px;
-        border-radius: 22px;
+        background-color: $lightblue;
         display: flex;
-        margin: auto;
-        #searchBar {
-            background-color: rgba(255,255,255,0.1);
+        padding: 20px;
+        #searchField {
             width: 100%;
-            color: $white;
-            padding: 0 22px;
-        }
-        .material-icons {
-            color: $white;
-            background-color: rgba(255,255,255,0.1);
+            max-width: 500px;
+            overflow: hidden;
+            min-height: 44px;
+            border-radius: 22px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 44px;
+            margin: auto;
+            #searchBar {
+                background-color: rgba(255,255,255,0.1);
+                width: 100%;
+                color: $white;
+                padding: 0 22px;
+            }
+            .material-icons {
+                color: $white;
+                background-color: rgba(255,255,255,0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 44px;
+            }
         }
     }
-}
 
-.accordion {
-    position: relative;
-    width: 100%;
-    .collapsed-button {
+    .accordion {
+        position: relative;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 44px;
-    }
-    .collapsed {
-        background-color: white;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        &:not(.show) {
-            display: none;
+        .collapsed-button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 44px;
+            &:hover {
+                cursor: pointer;
+            }
+            .rotate {
+                transform: rotate(180deg);
+            }
+        }
+        .collapsed {
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            &:not(.show) {
+                display: none;
+            }
+            .filters {
+                display: flex;
+                flex-direction: column;
+                max-width: 700px;
+            }
         }
     }
 }

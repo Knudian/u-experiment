@@ -45,7 +45,7 @@ class MainController extends AbstractController
         $lastAdded = [
             [
                 'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombages canins',
+                'title' => 'plombiste spécialisationné en plombagations canigou',
                 'domain' => 'btp'
             ]
         ];
@@ -53,7 +53,7 @@ class MainController extends AbstractController
         $lastUpdated = [
             [
                 'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombages canins',
+                'title' => 'plombiste spécialisationné en plombagations canigou',
                 'domain' => 'btp'
             ]
         ];
@@ -77,9 +77,9 @@ class MainController extends AbstractController
 
 
     /**
-     * @Route(name="results",path="/formations")
+     * @Route(name="trainingResults",path="/formations")
      */
-    public function results () {
+    public function trainingResults () {
 
         $page_title = 'La page';
         // liste des intitulés de domaines professionnels
@@ -137,7 +137,7 @@ class MainController extends AbstractController
 
 
         return $this->render(
-          'results.html.twig',
+          'trainingResults.html.twig',
           [
             'page_title' => $page_title,
             'list_domain' => $list_domain,
@@ -147,6 +147,53 @@ class MainController extends AbstractController
             'nbResults' => $nbResults,
             'list_sorting' => $list_sorting,
             'list_formation' => $list_formation
+          ]
+        );
+    }
+
+
+
+
+
+
+    /**
+     * @Route(name="trainingDetails",path="/formation")
+     */
+    public function trainingDetails () {
+
+        $page_title = 'La page';
+        // Détail d'une formation
+        $formation = [
+            [
+                'date' => '01/01/1991', // date ou string
+                'title' => 'plombiste spécialisationné en plombages canins', // string
+                'domain' => 'btp', // string
+                'certif' => 0, // booleen
+                'seats' => 25, // int
+                'session_start' => '12/12/1222', // string ou date (format à voir)
+                'session_end' => '20/20/2000', // string ou date (format à voir)
+                'training_organization' => 'IMIE Angers', // string
+                'city' => 'Angers', //string
+                'department' => 74, //int
+                'pta' => 0, // booleen
+                'hours_in_center' => 15, //int
+                'hours_in_company' => 10, //int
+                'hours_total' => 25, //int
+                'training_goal' => 'lorem', //string
+                'expected_result' => 'lorem', //string
+                'training_content' => 'lorem', //string
+                'training_process' => 'lorem', //string
+                'teaching_way' => 'lorem',
+                // et tout le reste parce que j'en ai marre de tout taper...
+            ]
+        ];
+
+
+        return $this->render(
+          'trainingDetails.html.twig',
+          [
+            'page_title' => $page_title,
+            'formation' => $formation
           ]
         );
     }

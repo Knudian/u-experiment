@@ -1,14 +1,20 @@
 {% include 'header.html.twig' %}
 
+<main id="results">
 
-<input type="text" name="" value="" placeholder="Rechercher">
+<div class="searchBar">
+    <input class="searchInput" type="text" name="" value="" placeholder="Rechercher">
+    <i class="material-icons searchIcon">search</i>
+</div>
 
 <div class="wrapper">
 
-    <div class="container">
+    <div class="container filters">
 
-        <i class="material-icons">filter_list</i>
-        <p>Filtres avancés</p>
+        <p class="filters-title">
+            <i class="material-icons">filter_list</i>
+            <span>Filtres avancés</span>
+        </p>
 
         <label for="domain">Domaine</label>
         <select name="domain">
@@ -84,13 +90,13 @@
 
 
 
-        <button class="button" type="button" name="button">Rechercher</button>
+        <button class="btn btn_blue" type="button" name="button">Rechercher</button>
     </div>
 
-    <div class="container">
+    <div class="container results">
 
         <div class="toolbar">
-            <span>{{ nbResults }}</span>
+            <span class="nbresults">{{ nbResults }} résultats</span>
 
             <select name="sorting">
 
@@ -132,5 +138,6 @@
 
 </div>
 
+</main>
 
 {% include('footer.html.twig') %}
