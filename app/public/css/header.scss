@@ -39,6 +39,7 @@
         align-items: center;
         justify-content: center;
         right: 0;
+        z-index: 99;
         @media screen and (min-width:1000px) {
             width: auto;
         }
@@ -48,7 +49,7 @@
             font-size: 1em;
             padding: 1em 0;
             width: 100%;
-            background-color: #003853;
+            background-color: $darkblue;
             text-align: center;
             @media screen and (min-width:1000px) {
                 font-size: 0.8em;
@@ -58,9 +59,9 @@
         }
         .profil_element {
             color: white;
-            padding: 2em 0;
+            padding: 1.5em 0;
             width: 100%;
-            background-color: #009ec1;
+            background-color: $lightblue;
             text-align: center;
             font-size: 1.5em;
             transition: 0.3s;
