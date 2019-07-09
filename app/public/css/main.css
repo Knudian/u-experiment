@@ -54,7 +54,6 @@ body {
 }
 
 .header_container .profil_dropdown {
-  font-family: "Open Sans";
   position: absolute;
   width: 100%;
   top: 100%;
@@ -93,7 +92,7 @@ body {
   color: white;
   padding: 1.5em 0;
   width: 100%;
-  background-color: #009ec1;
+  background-color: #009EC1;
   text-align: center;
   font-size: 1.5em;
   transition: 0.3s;
@@ -101,7 +100,6 @@ body {
 
 @media screen and (min-width: 1000px) {
   .header_container .profil_dropdown .profil_element {
-    width: 6em;
     padding: 0.8em 5em;
     font-size: 1em;
   }
@@ -112,11 +110,11 @@ body {
 }
 
 .flexdisplay {
-  display: flex;
+  display: flex !important;
 }
 
 .nonedisplay {
-  display: none;
+  display: none !important;
 }
 
 .container {
@@ -202,7 +200,7 @@ body {
 
 /********** REGISTER **********/
 /******************************/
-.register_container {
+.forms_container {
   font-family: 'Open Sans';
   display: flex;
   flex-direction: column;
@@ -211,7 +209,7 @@ body {
 }
 
 @media screen and (min-width: 1000px) {
-  .register_container {
+  .forms_container {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -219,19 +217,20 @@ body {
     background-color: white;
     transition: 0.3s;
   }
-  .register_container:hover {
-    box-shadow: 0px 0px 10px 0px #656565;
+  .forms_container:hover {
+    box-shadow: 0px 0px 10px 0px #646463;
   }
 }
 
-.register_container .register_title {
+.forms_container .forms_title {
+  height: 4em;
   display: flex;
   flex-direction: row;
   width: 100%;
   cursor: pointer;
 }
 
-.register_container .register {
+.forms_container .forms {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -241,18 +240,18 @@ body {
   text-transform: uppercase;
 }
 
-.register_container .register_active {
-  background-color: #009ec1;
+.forms_container .forms_active {
+  background-color: #009EC1;
   color: white;
   font-size: 1em;
   transition: 0.3s;
 }
 
-.register_container .register_active:hover {
+.forms_container .forms_active:hover {
   background-color: #4dbbd4;
 }
 
-.register_container .register_not_active {
+.forms_container .forms_not_active {
   background-color: white;
   color: black;
   font-size: 0.7em;
@@ -260,8 +259,44 @@ body {
   transition: 0.3s;
 }
 
-.register_container .register_not_active:hover {
+.forms_container .forms_not_active:hover {
   background-color: #eeeeee;
+}
+
+#login_form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+#login_form div {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0 1em;
+}
+
+@media screen and (min-width: 1000px) {
+  #login_form div {
+    margin: 0 5em;
+  }
+}
+
+#login_form div:first-child {
+  padding: 2em 0 1em;
+}
+
+#login_form div:last-child {
+  padding: 1em 0 2em;
+}
+
+#login_form form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login_form form button {
+  align-self: center;
+  margin: 1em 0 2em;
 }
 
 #registration_form {
@@ -322,8 +357,8 @@ body {
 }
 
 #registration_form input:focus {
-  border: 1px solid #009ec1;
-  color: #009ec1;
+  border: 1px solid #009EC1;
+  color: #009EC1;
   outline: none;
 }
 
@@ -331,6 +366,14 @@ body {
   #registration_form input {
     width: 20em;
   }
+}
+
+.section_active {
+  display: flex !important;
+}
+
+.section_not_active {
+  display: none !important;
 }
 
 /*********** MAIN ***********/

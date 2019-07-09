@@ -3,6 +3,10 @@ var profilDropdown = document.querySelector(".profil_dropdown");
 var html = document.querySelector("html");
 var profilElement1 = document.getElementsByClassName("profil_element")[0];
 var profilElement2 = document.getElementsByClassName("profil_element")[1];
+var loginForm = document.getElementById('login_form');
+var registrationForm = document.getElementById('registration_form');
+var LoginID = document.getElementById('login');
+var RegistrationID = document.getElementById('registration');
 
 profilDropdown.classList.add("nonedisplay");
 
@@ -31,4 +35,39 @@ html.addEventListener("click", function(event) {
 function toggleClass(selector,className) {
     let node = document.querySelector(selector);
     node.classList.toggle(className);
+}
+
+
+profilDropdown.addEventListener("click", function(event) {
+  if (event.target === profilElement1) {
+    ActivateForm();
+  } else if (event.target === profilElement2) {
+    ActivateForm();
+  }
+});
+
+if ((loginForm && registrationForm) != null) {
+
+  function ActivateForm() {
+    registrationForm.classList.toggle("section_active");
+    registrationForm.classList.toggle("section_not_active");
+    loginForm.classList.toggle("section_not_active");
+    loginForm.classList.toggle("section_active");
+    LoginID.classList.toggle("forms_not_active");
+    LoginID.classList.toggle("forms_active");
+    RegistrationID.classList.toggle("forms_not_active");
+    RegistrationID.classList.toggle("forms_active");
+  }
+
+  LoginID.addEventListener("click", function() {
+    if (registrationForm.classList.contains("section_active")) {
+      ActivateForm();
+    }
+  })
+  
+  RegistrationID.addEventListener("click", function() {
+    if (loginForm.classList.contains("section_active")) {
+      ActivateForm();
+    }
+  })
 }
