@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\LHEO\Dicts;
 
-use App\Entity\Financeur;
+use App\Entity\LHEO\Dicts\Financeur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -12,39 +12,10 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Financeur[]    findAll()
  * @method Financeur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class FinancersRepository extends ServiceEntityRepository
+class FinanceurRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Financeur::class);
     }
-
-    // /**
-    //  * @return Financeur[] Returns an array of Financeur objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Financeur
-    {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

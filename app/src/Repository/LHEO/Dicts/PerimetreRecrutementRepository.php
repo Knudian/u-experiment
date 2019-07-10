@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace App\Repository;
+namespace App\Repository\LHEO\Dicts;
 
-use App\Entity\PerimetreRecrutement;
+use App\Entity\LHEO\Dicts\PerimetreRecrutement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method PerimetreRecrutement[]    findAll()
  * @method PerimetreRecrutement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RecruitmentPerimeterRepository extends ServiceEntityRepository
+class PerimetreRecrutementRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

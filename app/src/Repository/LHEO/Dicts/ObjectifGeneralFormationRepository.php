@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\LHEO\Dicts;
 
-use App\Entity\ObjectifGeneralFormation;
+use App\Entity\LHEO\Dicts\ObjectifGeneralFormation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -12,39 +12,10 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method ObjectifGeneralFormation[]    findAll()
  * @method ObjectifGeneralFormation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CourseGoalRepository extends ServiceEntityRepository
+class ObjectifGeneralFormationRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, ObjectifGeneralFormation::class);
     }
-
-    // /**
-    //  * @return ObjectifGeneralFormation[] Returns an array of ObjectifGeneralFormation objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?ObjectifGeneralFormation
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace App\Entity;
+namespace App\Entity\External;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @see https://public.opendatasoft.com/explore/dataset/codes-nsf/table/?flg=fr
  * @ApiResource(itemOperations={"GET"})
- * @ORM\Entity(repositoryClass="App\Repository\CodeNsfRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\External\CodeNsfRepository")
  */
 class CodeNsf
 {

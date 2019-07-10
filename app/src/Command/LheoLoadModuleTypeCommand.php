@@ -2,15 +2,11 @@
 
 namespace App\Command;
 
-use App\Command\Dataset\ModuleTypeList;
-use App\Command\Dataset\RecruitmentStatusList;
-use App\Entity\ModuleType;
-use App\Entity\RecruitmentStatus;
+use App\Command\Dataset\TypeModuleList;
+use App\Entity\LHEO\Dicts\TypeModule;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -36,11 +32,11 @@ class LheoLoadModuleTypeCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
-        $dataset = ModuleTypeList::VALUES;
+        $dataset = TypeModuleList::VALUES;
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $rec = new ModuleType();
+            $rec = new TypeModule();
             $rec->setName($item);
             $this->entityManager->persist($rec);
             $io->progressAdvance();
