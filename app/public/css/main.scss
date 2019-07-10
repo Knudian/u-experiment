@@ -24,15 +24,30 @@ body {
     background-color: #f7f7f7;
 }
 
-input:not([type="checkbox"]):not(#searchBar),
+input:not([type=checkbox]):not(#searchBar),
 select {
     min-height: 44px;
     border-radius: 22px;
     outline: none;
     padding: 0 11px;
-    background-color: $lightgrey;
+    background-color: #f7f7f7;
+    width: 100%;
 }
-
+input[type=number] {
+    -moz-appearance: textfield;
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    &::-o-inner-spin-button {
+        -o-appearance: none;
+    }
+}
+.h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 20px;
+    color: $white;
+}
 .btn {
     padding: 0.5em 5em;
     color: $lightgrey;

@@ -29,7 +29,7 @@ if (event.target === profil) {
     profilDropdown.classList.add("nonedisplay");
     profilDropdown.classList.remove("flexdisplay");
 }
-});
+})
 
 
 function toggleClass(selector,className) {
@@ -38,13 +38,13 @@ function toggleClass(selector,className) {
     document.querySelector('.button-icon').classList.toggle('rotate');
 }
 
-document.querySelector('.order').onclick = function(){
-    if (this.innerHTML == 'A-Z') {
-        this.innerHTML = 'Z-A';
+function orderSwitch() {
+    if (event.innerHTML == 'A-Z') {
+        event.innerHTML = 'Z-A';
     } else {
-        this.innerHTML = 'A-Z';
+        event.innerHTML = 'A-Z';
     }
-};
+}
 
 profilDropdown.addEventListener("click", function(event) {
   if (event.target === profilElement1) {
