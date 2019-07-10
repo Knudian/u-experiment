@@ -31,10 +31,10 @@ Feature: tests for account validation
 
 ### Code
 
-La fonction ```php isPartOfTheAuthorizedDomains($domain)``` viens ajouter pour chaque test lancer les domaines de test qu'on lui fournis dans le background du scenario.
+La fonction ```isPartOfTheAuthorizedDomains($domain)``` viens ajouter pour chaque test lancer les domaines de test qu'on lui fournis dans le background du scenario.
 
-La fonction ```php theEmailAdressProvidedByTheUserIs($email)``` viens valider que l'utilisateur a bien rentrer une adresse email dans le champ adrese email de son inscription.
+La fonction ```theEmailAdressProvidedByTheUserIs($email)``` viens valider que l'utilisateur a bien rentrer une adresse email dans le champ adrese email de son inscription.
 
-La fonction ```php theUserClickTheButton($button)``` vient simuler le fait que l'utilisateur valide son inscription and appuyant sur le bon bouton.
+La fonction ```theUserClickTheButton($button)``` vient simuler le fait que l'utilisateur valide son inscription and appuyant sur le bon bouton.
 
-La fonction ```php theUserAccountIsValidatedIfComputeToARecognizedDomain($email)``` réupère l'adresse email utilisée par l'utilisateur, identifie le domaine utilisé et vient vérifier si ce domaine fais partis de la liste de domaine autorisée que l'on as créer a l'instanciation du test. 
+La fonction ```theUserAccountIsValidatedIfComputeToARecognizedDomain($email)``` réupère l'adresse email utilisée par l'utilisateur, identifie le domaine utilisé et vient vérifier si ce domaine fais partis de la liste de domaine autorisée que l'on as créer a l'instanciation du test. 
