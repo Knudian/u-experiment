@@ -338,7 +338,7 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
     transition: 0.3s;
   }
   .forms_container:hover {
-    box-shadow: 0px 0px 10px 0px #646463;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
   }
 }
 
