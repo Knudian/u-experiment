@@ -49,7 +49,7 @@ class DomainAuthorizationContext implements Context
      */
     public function theUserClickTheButton($button)
     {
-        PHPUnit\Framework\Assert::assertTrue(true, "Add domain");
+        PHPUnit\Framework\Assert::assertEquals("Add domain", $button);
     }
 
     /**
