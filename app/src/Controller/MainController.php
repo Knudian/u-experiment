@@ -132,6 +132,19 @@ class MainController extends AbstractController
                 'city' => 'Palourdes',
                 'departement' => 74,
                 'pta' => 0
+            ],
+            [
+                'date' => '01/01/1991',
+                'title' => 'plombiste spécialisationné en plombages canins',
+                'domain' => 'btp',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '12/12/1222',
+                'session_end' => '20/20/2000',
+                'training_organiz' => 'EMEI Angers',
+                'city' => 'Palourdes',
+                'departement' => 74,
+                'pta' => 0
             ]
         ];
 

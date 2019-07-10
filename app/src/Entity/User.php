@@ -35,6 +35,18 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private $confirmationPassword;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $siret;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -93,6 +105,28 @@ class User implements UserInterface
     {
         $this->password = $password;
 
+        return $this;
+    }
+
+    public function getSiret(): ?string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(string $siret): self
+    {
+        $this->siret = $siret;
+        return $this;
+    }
+
+    public function getConfirmationPassword(): ?string
+    {
+        return $this->confirmationPassword;
+    }
+
+    public function setConfirmationPassword(string $confirmationPassword): self
+    {
+        $this->confirmationPassword = $confirmationPassword;
         return $this;
     }
 

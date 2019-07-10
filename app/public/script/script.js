@@ -38,6 +38,13 @@ function toggleClass(selector,className) {
     document.querySelector('.button-icon').classList.toggle('rotate');
 }
 
+document.querySelector('.order').onclick = function(){
+    if (this.innerHTML == 'A-Z') {
+        this.innerHTML = 'Z-A';
+    } else {
+        this.innerHTML = 'A-Z';
+    }
+};
 
 profilDropdown.addEventListener("click", function(event) {
   if (event.target === profilElement1) {
@@ -65,7 +72,7 @@ if ((loginForm && registrationForm) != null) {
       ActivateForm();
     }
   })
-  
+
   RegistrationID.addEventListener("click", function() {
     if (loginForm.classList.contains("section_active")) {
       ActivateForm();
