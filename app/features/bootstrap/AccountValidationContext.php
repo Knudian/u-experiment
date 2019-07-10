@@ -38,7 +38,7 @@ class AccountValidationContext implements Context
      */
     public function theUserClickTheButton($button)
     {
-        PHPUnit\Framework\Assert::assertTrue(true, $button == "register");
+        PHPUnit\Framework\Assert::assertEquals("register", $button);
     }
 
     /**
