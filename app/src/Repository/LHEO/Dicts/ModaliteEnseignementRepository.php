@@ -1,50 +1,21 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\LHEO\Dicts;
 
-use App\Entity\CourseDistance;
+use App\Entity\LHEO\Dicts\ModaliteEnseignement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method CourseDistance|null find($id, $lockMode = null, $lockVersion = null)
- * @method CourseDistance|null findOneBy(array $criteria, array $orderBy = null)
- * @method CourseDistance[]    findAll()
- * @method CourseDistance[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ModaliteEnseignement|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ModaliteEnseignement|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ModaliteEnseignement[]    findAll()
+ * @method ModaliteEnseignement[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CourseDistanceRepository extends ServiceEntityRepository
+class ModaliteEnseignementRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, CourseDistance::class);
+        parent::__construct($registry, ModaliteEnseignement::class);
     }
-
-    // /**
-    //  * @return CourseDistance[] Returns an array of CourseDistance objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?CourseDistance
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

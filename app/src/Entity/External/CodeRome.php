@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace App\Entity;
+namespace App\Entity\External;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @see https://public.opendatasoft.com/explore/dataset/pole-emploi-rome-arborescence-thematique/table/
  * @ApiResource(itemOperations={"GET"})
- * @ORM\Entity(repositoryClass="App\Repository\CodeRomeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\External\CodeRomeRepository")
  */
 class CodeRome
 {

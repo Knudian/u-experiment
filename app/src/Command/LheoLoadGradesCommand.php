@@ -2,8 +2,8 @@
 
 namespace App\Command;
 
-use App\Command\Dataset\GradeList;
-use App\Entity\Grade;
+use App\Command\Dataset\NiveauxList;
+use App\Entity\Niveau;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -32,11 +32,11 @@ class LheoLoadGradesCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
-        $dataset = GradeList::VALUES;
+        $dataset = NiveauxList::VALUES;
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new Grade();
+            $object = new Niveau();
             $object
                 ->setLevel($item[0])
                 ->setName($item[1]);

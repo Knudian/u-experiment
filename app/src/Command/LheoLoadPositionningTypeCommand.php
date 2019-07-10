@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\RecruitmentStatusList;
-use App\Entity\PositionningType;
+use App\Entity\TypePositionnement;
 use App\Entity\RecruitmentStatus;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
@@ -37,7 +37,7 @@ class LheoLoadPositionningTypeCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $rec = new PositionningType();
+            $rec = new TypePositionnement();
             $rec->setName($item);
             $this->entityManager->persist($rec);
             $io->progressAdvance();

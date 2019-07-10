@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\LHEO\Dicts;
 
-use App\Entity\TypeParcours;
+use App\Entity\LHEO\Dicts\TypeParcours;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method TypeParcours[]    findAll()
  * @method TypeParcours[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CourseTypeRepository extends ServiceEntityRepository
+class TypeParcoursRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {

@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\CourseTypeList;
-use App\Entity\CourseType;
+use App\Entity\LHEO\Dicts\TypeParcours;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LheoLoadCourseTypeCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new CourseType();
+            $object = new TypeParcours();
             $object->setName($item);
             $this->entityManager->persist($object);
             $io->progressAdvance();

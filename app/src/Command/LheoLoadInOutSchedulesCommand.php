@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\InOutScheduleList;
-use App\Entity\InOutSchedule;
+use App\Entity\LHEO\Dicts\ModaliteEntreeSortie;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LheoLoadInOutSchedulesCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new InOutSchedule();
+            $object = new ModaliteEntreeSortie();
             $object->setName($item);
             $this->entityManager->persist($object);
             $io->progressAdvance();

@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\CourseDistanceList;
-use App\Entity\CourseDistance;
+use App\Entity\LHEO\Dicts\ModaliteEnseignement;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LheoLoadCourseDistanceCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new CourseDistance();
+            $object = new ModaliteEnseignement();
             $object->setName($item);
             $this->entityManager->persist($object);
             $io->progressAdvance();

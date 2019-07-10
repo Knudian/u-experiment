@@ -1,13 +1,13 @@
 <?php declare(strict_types = 1);
 
-namespace App\Entity;
+namespace App\Entity\LHEO\Dicts;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CourseTypeRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LHEO\Dicts\TypeParcoursRepository")
  */
-class CourseType
+class TypeParcours
 {
     /**
      * @ORM\Id()

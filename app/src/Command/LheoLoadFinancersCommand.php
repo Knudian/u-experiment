@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\FinancerList;
-use App\Entity\Financer;
+use App\Entity\LHEO\Dicts\Financeur;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LheoLoadFinancersCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new Financer();
+            $object = new Financeur();
             $object->setName($item);
             $this->entityManager->persist($object);
             $io->progressAdvance();

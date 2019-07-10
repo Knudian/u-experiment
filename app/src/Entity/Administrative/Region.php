@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Region
 {
     /**
+     * @var int
      * @ORM\Id()
      * @ORM\Column(type="integer")
      */

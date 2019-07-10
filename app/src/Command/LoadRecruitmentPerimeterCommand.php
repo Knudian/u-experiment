@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\RecruitmentPerimeterList;
-use App\Entity\RecruitmentPerimeter;
+use App\Entity\LHEO\Dicts\PerimetreRecrutement;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LoadRecruitmentPerimeterCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $rec = new RecruitmentPerimeter();
+            $rec = new PerimetreRecrutement();
             $rec->setName($item);
             $this->entityManager->persist($rec);
             $io->progressAdvance();

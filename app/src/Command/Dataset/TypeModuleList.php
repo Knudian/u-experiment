@@ -2,7 +2,7 @@
 
 namespace App\Command\Dataset;
 
-final class ModuleTypeList
+final class TypeModuleList
 {
     public const VALUES = [
         'information inconnue',

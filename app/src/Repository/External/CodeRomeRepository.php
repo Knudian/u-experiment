@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Repository\External;
 
-use App\Entity\CodeRome;
+use App\Entity\External\CodeRome;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 

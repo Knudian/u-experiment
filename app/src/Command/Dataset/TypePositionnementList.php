@@ -2,7 +2,7 @@
 
 namespace App\Command\Dataset;
 
-final class PositionningTypeList
+final class TypePositionnementList
 {
     public const VALUES = [
         'réglementaire',

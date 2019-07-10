@@ -2,7 +2,7 @@
 
 namespace App\Command\Dataset;
 
-final class GradeList
+final class NiveauxList
 {
     public const VALUES = [
         [8, 'Information non communiquée'],

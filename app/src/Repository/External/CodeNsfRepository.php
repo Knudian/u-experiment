@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace App\Repository;
+namespace App\Repository\External;
 
-use App\Entity\CodeNsf;
+use App\Entity\External\CodeNsf;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 

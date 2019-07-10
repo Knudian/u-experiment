@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\CourseGoalList;
-use App\Entity\CourseGoal;
+use App\Entity\ObjectifGeneralFormation;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -36,7 +36,7 @@ class LheoLoadCourseGoalCommand extends Command
         $io->createProgressBar(count($dataset));
         $io->progressStart();
         foreach ($dataset as $item) {
-            $object = new CourseGoal();
+            $object = new ObjectifGeneralFormation();
             $object->setName($item);
             $this->entityManager->persist($object);
             $io->progressAdvance();

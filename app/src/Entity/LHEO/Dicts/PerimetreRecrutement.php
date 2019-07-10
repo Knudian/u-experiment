@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\LHEO\Dicts\RecruitmentPerimeterRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LHEO\Dicts\PerimetreRecrutementRepository")
  */
 class PerimetreRecrutement
 {
