@@ -36,4 +36,4 @@ La ```theSelectedFormatToExportTheDataInIs()``` fais appel a ```testDataType()``
 
 La fonction ```theUserIs($connected)``` vérifie si l'utilisateur est connecté, afin de s'assurer qu'il ai l'autorisation d'effectuer l'export.
 
-La fonction ```theUserClickTheButton($button)``` simule l'intraction de l'utilisateur sur le boutton export.
+La fonction ```theUserClickTheButton($button)``` simule l'interaction de l'utilisateur sur le boutton export.
