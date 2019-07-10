@@ -2,9 +2,10 @@ default:
     suites:
         default:
             contexts:
-                - FeatureContext:
-                    kernel: '@kernel'
-
+                - FeatureContext
+                #- AccountValidationContext
+                #- DomainAuthorizationContext
+                - DataExportContext
     extensions:
         Behat\Symfony2Extension:
             kernel:
