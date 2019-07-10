@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Defines application features from the specific context.
  */
-class LostPasswordContext implements Context
+class ForgottenPasswordContext implements Context
 {
     /**
      * @var email
