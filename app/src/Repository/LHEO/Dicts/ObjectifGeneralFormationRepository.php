@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\CourseType;
+use App\Entity\ObjectifGeneralFormation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method CourseType|null find($id, $lockMode = null, $lockVersion = null)
- * @method CourseType|null findOneBy(array $criteria, array $orderBy = null)
- * @method CourseType[]    findAll()
- * @method CourseType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ObjectifGeneralFormation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ObjectifGeneralFormation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ObjectifGeneralFormation[]    findAll()
+ * @method ObjectifGeneralFormation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CourseTypeRepository extends ServiceEntityRepository
+class CourseGoalRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, CourseType::class);
+        parent::__construct($registry, ObjectifGeneralFormation::class);
     }
 
     // /**
-    //  * @return CourseType[] Returns an array of CourseType objects
+    //  * @return ObjectifGeneralFormation[] Returns an array of ObjectifGeneralFormation objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class CourseTypeRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?CourseType
+    public function findOneBySomeField($value): ?ObjectifGeneralFormation
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

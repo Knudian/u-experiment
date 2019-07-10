@@ -1,15 +1,15 @@
 <?php declare(strict_types = 1);
 
-namespace App\Entity;
+namespace App\Entity\LHEO\Dicts;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\RecruitmentPerimeterRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LHEO\Dicts\EtatRecrutementRepository")
  */
-class RecruitmentPerimeter
+class EtatRecrutement
 {
     /**
      * @var int
@@ -30,15 +30,12 @@ class RecruitmentPerimeter
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setName(string $name): RecruitmentPerimeter
+    public function setName(string $name): self
     {
         $this->name = $name;
         return $this;

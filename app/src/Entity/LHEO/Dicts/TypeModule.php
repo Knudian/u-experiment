@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\CourseGoalRepository")
+ * @ORM\Entity(repositoryClass="TypeModuleRepository")
  */
-class CourseGoal
+class TypeModule
 {
     /**
      * @var int
@@ -38,6 +38,7 @@ class CourseGoal
     public function setName(string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 }
