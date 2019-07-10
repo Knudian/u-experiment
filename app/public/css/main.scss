@@ -8,9 +8,10 @@ $desktop: 1000px;
 
 @import "reset.scss";
 @import "header.scss";
+@import "footer.scss";
 @import "home.scss";
-@import "trainingResults.scss";
 @import "register.scss";
+@import "trainingResults.scss";
 @import "trainingDetails.scss";
 
 /*********** MAIN ***********/
@@ -22,25 +23,6 @@ $desktop: 1000px;
 
 body {
     background-color: #f7f7f7;
-}
-
-input:not([type=checkbox]):not(#searchBar),
-select {
-    min-height: 44px;
-    border-radius: 22px;
-    outline: none;
-    padding: 0 11px;
-    background-color: #f7f7f7;
-    width: 100%;
-}
-input[type=number] {
-    -moz-appearance: textfield;
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-    &::-o-inner-spin-button {
-        -o-appearance: none;
-    }
 }
 .h1 {
     font-size: 30px;

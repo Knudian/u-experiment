@@ -1,4 +1,22 @@
 #home {
+    input:not([type=checkbox]):not(#searchBar),
+    select {
+        min-height: 44px;
+        border-radius: 22px;
+        outline: none;
+        padding: 0 11px;
+        background-color: #f7f7f7;
+        width: 100%;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        &::-o-inner-spin-button {
+            -o-appearance: none;
+        }
+    }
     .container {
         display: flex;
         flex-direction: column;
