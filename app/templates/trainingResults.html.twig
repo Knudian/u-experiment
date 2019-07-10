@@ -1,0 +1,164 @@
+{% include 'header.html.twig' %}
+
+<main id="results">
+
+<div class="searchBar">
+    <input class="searchInput" type="text" name="" value="" placeholder="Rechercher">
+    <i class="material-icons searchIcon">search</i>
+</div>
+
+<div class="wrapper">
+
+    <div class="container filters">
+
+        <p class="filters-title">
+            <i class="material-icons">filter_list</i>
+            <span>Filtres avancés</span>
+        </p>
+
+        <button class="btn btn_blue" type="button" name="button">Rechercher</button>
+
+        <label for="domain">Domaine</label>
+        <select name="domain">
+
+            <option selected>Domaine</option>
+            {% for domain in list_domain %}
+            <option value="{{ domain }}">{{ domain }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="job">Métier</label>
+        <select name="job">
+
+            <option selected>Métier</option>
+            {% for job in list_job %}
+            <option value="{{ job }}">{{ job }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="lvlin">Niveau d'entrée</label>
+        <select name="lvlin">
+
+            <option selected>Niveau</option>
+            {% for lvlin in list_lvlin %}
+            <option value="{{ lvlin }}">{{ lvlin }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="lvlout">Niveau de sortie</label>
+        <select name="lvlout">
+
+            <option selected>Niveau</option>
+            {% for lvlout in list_lvlout %}
+            <option value="{{ lvlout }}">{{ lvlout }}</option>
+            {% endfor %}
+
+        </select>
+
+
+
+        <label for="time">Durée (heure)</label>
+        <input type="number" name="time">
+
+
+
+        <div class="group">
+            <span>Statut</span>
+            <div>
+                <label for="employee">Salarié</label>
+                <input type="checkbox" name="employee">
+            </div>
+            <div>
+                <label for="unemployed">Demandeur d'emploi</label>
+                <input type="checkbox" name="unemployed">
+            </div>
+        </div>
+
+
+        <div>
+            <label for="cpf">Formation éligible CPF</label>
+            <input type="checkbox" name="cpf">
+        </div>
+
+
+        <div>
+            <label for="started">Afficher les formations déjà commencées</label>
+            <input type="checkbox" name="started">
+        </div>
+
+
+
+    </div>
+
+    <div class="container results">
+
+        <div class="toolbar">
+            <span class="nbresults">{{ nbResults }} résultats</span>
+
+            <select name="sorting">
+
+                <option selected>Trier par</option>
+                {% for sorting in list_sorting %}
+                <option value="{{ sorting }}">{{ sorting }}</option>
+                {% endfor %}
+
+            </select>
+
+            <button class="order">A-Z</button>
+
+            <button class="export" onclick="toggleClass('.modal','show')">
+                <i class="material-icons">vertical_align_bottom</i>
+            </button>
+
+        </div>
+
+        <div class="listing">
+            {% for formation in list_formation %}
+            <div class="formation">
+
+                <div class="row">
+                    <span>{{ formation.title }}</span>
+                    <span>{{ formation.seats }}</span>
+                    <span>{{ formation.session_start }}</span>
+                    <span>{{ formation.session_end }}</span>
+                    <span>{{ formation.pta }}</span>
+                    <span>{{ formation.certif }}</span>
+                </div>
+
+                <div class="row">
+                    <span>{{ formation.domain }}</span>
+                    <span>{{ formation.training_organiz }}</span>
+                    <span>{{ formation.city  }}</span>
+                    <span>{{ formation.departement }}</span>
+                </div>
+
+                <i class="material-icons see-more">search</i>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal">
+    <div class="inner">
+        <p>Exporter la recherche</p>
+        <button class="btn" onclick="toggleClass('.modal','show')">Annuler</button>
+        <button class="btn btn_blue">Exporter</button>
+    </div>
+</div>
+
+</main>
+
+
+{% include('footer.html.twig') %}

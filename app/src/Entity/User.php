@@ -48,6 +48,18 @@ final class User implements UserInterface
      */
     protected $resetToken;
 
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $confirmationPassword;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $siret;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -109,6 +121,28 @@ final class User implements UserInterface
     public function setResetToken(?string $resetToken = null): self
     {
         $this->resetToken = $resetToken;
+        return $this;
+    }
+
+    public function getSiret(): ?string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(string $siret): self
+    {
+        $this->siret = $siret;
+        return $this;
+    }
+
+    public function getConfirmationPassword(): ?string
+    {
+        return $this->confirmationPassword;
+    }
+
+    public function setConfirmationPassword(string $confirmationPassword): self
+    {
+        $this->confirmationPassword = $confirmationPassword;
         return $this;
     }
 
