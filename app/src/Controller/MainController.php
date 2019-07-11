@@ -15,11 +15,11 @@ class MainController extends AbstractController
         $site_about = 'Texte descriptif du site';
         // liste des intitulés de domaines professionnels
         $list_domain = [
-          'domaine1',
-          'domaine2',
-          'Maxime appartient à Simon',
-          'Simon appartient à Maxime',
-          'Mais ils ne le savent pas ...'
+          'Agroalimentaire',
+          'BTP',
+          'Banque / Assurance',
+          'Informatique / Télécoms',
+          'Transports / Logistique'
         ];
         // liste des métiers
         $list_job = [
@@ -106,11 +106,11 @@ class MainController extends AbstractController
         $page_title = 'Titre de la page';
         // liste des intitulés de domaines professionnels
         $list_domain = [
-          'domaine1',
-          'domaine2',
-          'Maxime appartient à Simon',
-          'Simon appartient à Maxime',
-          'Mais ils ne le savent pas ...'
+          'Agroalimentaire',
+          'BTP',
+          'Banque / Assurance',
+          'Informatique / Télécoms',
+          'Transports / Logistique'
         ];
         // liste des métiers
         $list_job = [
