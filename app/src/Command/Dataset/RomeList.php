@@ -2,8 +2,15 @@
 
 namespace App\Command\Dataset;
 
+/**
+ * Class RomeList
+ * @package App\Command\Dataset
+ */
 final class RomeList
 {
+    /**
+     * array[string Code formation] = string nom de formation
+     */
     public const VALUES = [
         'F1607' => "Pose de fermetures menuisées",
         'H1206' => "Management et ingénierie études",

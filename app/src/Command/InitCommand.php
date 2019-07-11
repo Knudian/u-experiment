@@ -8,6 +8,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class InitCommand
+ * @package App\Command
+ */
 class InitCommand extends Command
 {
     protected static $defaultName = 'app:init';
@@ -19,6 +23,14 @@ class InitCommand extends Command
         ;
     }
 
+    /**
+     * @TODO
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     * @throws \Exception
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

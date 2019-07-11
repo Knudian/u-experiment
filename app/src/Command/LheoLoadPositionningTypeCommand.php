@@ -11,6 +11,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LheoLoadPositionningTypeCommand
+ * @package App\Command
+ */
 class LheoLoadPositionningTypeCommand extends Command
 {
     protected static $defaultName = 'lheo:load:positionning-type';
@@ -30,6 +34,13 @@ class LheoLoadPositionningTypeCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe TypePositionnementList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

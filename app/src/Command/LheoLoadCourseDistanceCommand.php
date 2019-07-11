@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LheoLoadCourseDistanceCommand
+ * @package App\Command
+ */
 class LheoLoadCourseDistanceCommand extends Command
 {
     protected static $defaultName = 'lheo:load:course-distance';
@@ -29,6 +33,13 @@ class LheoLoadCourseDistanceCommand extends Command
         ;
     }
 
+    /**
+     * charge le jeux de donnés de la classe CourseDistanceList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

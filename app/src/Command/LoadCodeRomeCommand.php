@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LoadCodeRomeCommand
+ * @package App\Command
+ */
 class LoadCodeRomeCommand extends Command
 {
     protected static $defaultName = 'app:load:code-rome';
@@ -31,6 +35,13 @@ class LoadCodeRomeCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe RomeList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

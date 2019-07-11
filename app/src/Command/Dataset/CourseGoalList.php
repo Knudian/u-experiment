@@ -2,8 +2,17 @@
 
 namespace App\Command\Dataset;
 
+/**
+ * Class CourseGoalList
+ * @package App\Command\Dataset
+ */
 final class CourseGoalList
 {
+    /**
+     * But du cours
+     *
+     * array<string> defines but de la formation
+     */
     public const VALUES = [
         'Code(s) obsolète(s)',
         'Certification',

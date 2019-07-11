@@ -2,8 +2,15 @@
 
 namespace App\Command\Dataset;
 
+/**
+ * Class RegionList
+ * @package App\Command\Dataset
+ */
 final class RegionList
 {
+    /**
+     * array[int code de region] = int Nom de région
+     */
     public const VALUES = [
         84 => "AUVERGNE-RHONE-ALPES",
         32 => "HAUTS-DE-FRANCE",

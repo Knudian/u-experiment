@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LheoLoadInOutSchedulesCommand
+ * @package App\Command
+ */
 class LheoLoadInOutSchedulesCommand extends Command
 {
     protected static $defaultName = 'lheo:load:in-out-schedules';
@@ -29,6 +33,13 @@ class LheoLoadInOutSchedulesCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe InOutSchedulesList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

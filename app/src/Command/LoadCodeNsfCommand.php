@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LoadCodeNsfCommand
+ * @package App\Command
+ */
 class LoadCodeNsfCommand extends Command
 {
     protected static $defaultName = 'app:load:code-nsf';
@@ -31,6 +35,13 @@ class LoadCodeNsfCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe NsfList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

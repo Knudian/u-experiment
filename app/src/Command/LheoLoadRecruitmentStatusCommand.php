@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LheoLoadRecruitmentStatusCommand
+ * @package App\Command
+ */
 class LheoLoadRecruitmentStatusCommand extends Command
 {
     protected static $defaultName = 'lheo:load:recruitment-status';
@@ -29,6 +33,13 @@ class LheoLoadRecruitmentStatusCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe RecruitmentStatusList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

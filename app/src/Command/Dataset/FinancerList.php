@@ -2,8 +2,17 @@
 
 namespace App\Command\Dataset;
 
+/**
+ * Class FinancerList
+ * @package App\Command\Dataset
+ */
 final class FinancerList
 {
+    /**
+     * Type de financement
+     *
+     * array<string> defines type de financement
+     */
     public const VALUES = [
         'Etat - Ministère chargé de l\'emploi',
         'Etat - Ministère de l\'éducation nationale',

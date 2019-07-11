@@ -10,6 +10,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LheoLoadCourseGoalCommand
+ * @package App\Command
+ */
 class LheoLoadCourseGoalCommand extends Command
 {
     protected static $defaultName = 'lheo:load:course-goal';
@@ -29,6 +33,13 @@ class LheoLoadCourseGoalCommand extends Command
         ;
     }
 
+    /**
+     * charge le jeux de donnés de la classe CourseGoalList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

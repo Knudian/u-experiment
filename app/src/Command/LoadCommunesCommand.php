@@ -11,6 +11,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+/**
+ * Class LoadCommunesCommand
+ * @package App\Command
+ */
 class LoadCommunesCommand extends Command
 {
     protected static $defaultName = 'app:load:communes';
@@ -37,6 +41,13 @@ class LoadCommunesCommand extends Command
         ;
     }
 
+    /**
+     * Charge le jeux de donnés de la classe CommuneList
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|void|null
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);

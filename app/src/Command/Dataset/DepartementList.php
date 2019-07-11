@@ -2,8 +2,19 @@
 
 namespace App\Command\Dataset;
 
+/**
+ * Class DepartementList
+ * @package App\Command\Dataset
+ */
 final class DepartementList
 {
+    /**
+     * Départements
+     *
+     * array[$x][0] string defines numéros de département
+     *          [1] int defines @TODO
+     *          [2] string defines nom du départemnt
+     */
     public const VALUES = [
         ["1", 84, "AIN"],
         ["10", 44, "AUBE"],
