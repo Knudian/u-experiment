@@ -102,6 +102,10 @@
                 width: 100%;
                 color: $white;
                 padding: 0 22px;
+                outline: none;
+                &::placeholder {
+                    color: $white;
+                }
             }
             .material-icons {
                 color: $white;

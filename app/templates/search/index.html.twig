@@ -1,0 +1,28 @@
+{% include 'header.html.twig' %}
+
+{% block body %}
+    <div class="forms_container">
+        <div class="forms_title">
+            <h2 id="login" class="forms forms_active">Connexion</h2>
+            <h2 id="registration" class="forms forms_not_active">Inscription</h2>
+        </div>
+
+        <div id="search_form" class="section_not_active">
+            {{ form_start(searchFormType) }}
+            {#{{ form_row(searchFormType.search) }} #}
+            {#{{ form_row(searchFormType.domain) }} #}
+{#            {{ form_row(searchFormType.sector) }}#}
+{#            {{ form_row(searchFormType.enterLevel) }}#}
+{#            {{ form_row(searchFormType.outLevel) }}#}
+            {#{{ form_row(searchFormType.status) }} #}
+{#            {{ form_row(searchFormType.numberHours) }}#}
+            {#{{ form_row(searchFormType.cpf) }} #}
+            {#{{ form_row(searchFormType.alreadyStarted) }} #}
+
+            <button class="btn btn_blue width_btn">Rechercher</button>
+            {{ form_end(searchFormType) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% include('footer.html.twig') %}
