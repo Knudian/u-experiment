@@ -1,3 +1,103 @@
-#details {
-    
+.main_detail {
+    position: relative;
+}
+
+.detail_title {
+    background-color: white;
+    display: flex;
+    padding: 1em;
+    h1 {
+        font-size: 1.2em;
+        padding-left: 1em;
+    }
+}
+
+.section_lieu_formation {
+    @media screen and (min-width:1000px) {
+    }
+}
+
+.section_container {
+    padding: 2em;
+    @media screen and (min-width:1000px) {
+        padding: 2em 4em;
+    }
+    .section {
+        padding: 1em 0;
+        display: flex;
+        .detail_icon {
+            padding-right: 1em;
+        }
+        .rythme {
+            display: flex;
+            flex-direction: row;
+            background-color: none;
+        }
+        .collapse_rythme {
+            display: none;
+        }
+        .rythme_formation {
+            display: flex;
+            cursor: pointer;
+        }
+        .accordeon {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: $lightblue;
+            padding: 1em 2em;
+            color: white;
+            cursor: pointer;
+        }
+    }
+    .section_rythme {
+        flex-direction: column;
+    }
+    .section_objectif,
+    .section_modalites,
+    .section_organisme,
+    .section_financement {
+        flex-direction: column;
+        margin: 0 -2em;
+        .collapse_objectif,
+        .collapse_modalites,
+        .collapse_organisme,
+        .collapse_financement {
+            display: none;
+        }
+    }
+    .desc {
+        padding: 1em 0;
+    }
+    .menu_collapse {
+        padding-left: 1em;
+    }
+    .parcours,
+    .modalites_entre_sortie {
+        display: flex;
+        cursor: pointer;
+    }
+    .parcours_collapse,
+    .modalites_collapse_desc {
+        display: none;
+    }
+}
+.section_pratique {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $lightgrey;
+    @media screen and (min-width:1000px) {
+        flex-wrap: nowrap;
+    }
+    .section_restauration,
+    .section_transport,
+    .section_hebergement,
+    .section_accessible {
+        width: 50%;
+    }
+}
+
+.display {
+    display: block!important;
 }

@@ -4,64 +4,302 @@
 
     <div>
 
-        <div class="section main_detail">
-            <h1>Intitulé de Formation pour personne de tout genre y compris non-binaire</h1>
-            <h2>Informations Principales</h2>
+        <div class="main_detail">
+            <div class="detail_title">
+                <i class="detail_icon material-icons">school</i>
+                <h1>Intitulé de Formation pour personne de tout genre y compris non-binaire</h1>
+            </div>
 
-            <div class="lieu">
-                <i class="material-icons" alt="Lieu de formation" title="Lieu de formation">location_on</i>
-                <div class="adresse">
-                    <p>Ville</p>
-                    <p>Code Postal</p>
-                    <p>Addresse</p>
+            <div class="section_container section_lieu_formation">
+                <div class="section section_lieu">
+                    <i class="detail_icon material-icons" alt="Lieu de formation" title="Lieu de formation">location_on</i>
+                    <div class="adresse">
+                        <p>Ville</p>
+                        <p>Code Postal</p>
+                        <p>Addresse</p>
+                    </div>
+                </div>
+
+                <div class="section section_organisme1">
+                    <i class="detail_icon material-icons" alt="Organisme de formation" title="Organisme de formation">account_balance</i>
+                    <div class="organisme1">
+                        <p>Organisme de formation</p>
+                    </div>
+                </div>
+
+                <div class="section section_periode">
+                    <i class="detail_icon material-icons" alt="Période de formation" title="Période de formation">calendar_today</i>
+                    <div class="periode">
+                        <p>Période</p>
+                    </div>
+                </div>
+
+                <div class="section section_session">
+                    <i class="detail_icon material-icons">date_range</i>
+                    <div class="session">
+                        <p>Session</p>
+                    </div>
                 </div>
             </div>
 
-            <i class="material-icons" alt="Période de formation" title="Période de formation">calendar_today</i>
-            <div class="periode">
-                <p>Période</p>
+            <div class="section_container section_pratique">
+                <div class="section section_restauration">
+                    <i class="detail_icon material-icons" alt="Restauration" title="Restauration">restaurant</i>
+                    <div class="restauration">
+                        <p>Restauration</p>
+                    </div>
+                </div>
+
+                <div class="section section_transport">
+                    <i class="detail_icon material-icons" alt="Transport" title="Transport">directions_transit</i>
+                    <div class="transport">
+                        <p>Transport</p>
+                    </div>
+                </div>
+
+                <div class="section section_hebergement">
+                    <i class="detail_icon material-icons" alt="Hébergement" title="Hébergement">airline_seat_individual_suite</i>
+                    <div class="hebergement">
+                        <p>Hébergement</p>
+                    </div>
+                </div>
+
+                <div class="section section_accessible">
+                    <i class="detail_icon material-icons" alt="Accessibilité handicapés" title="Accessibilité handicapés">accessible</i>
+                    <div class="accessible">
+                        <p>Accès handicapés</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="session">
-                <p>Session</p>
-            </div>
+            <div class="section_container section_info_formation">
+                <div class="section section_place">
+                    <i class="detail_icon material-icons" alt="Nombre de places disponibles" title="Nombre de places disponibles">event_seat</i>
+                    <div class="place">
+                        <p>Nombre de place</p>
+                    </div>
+                </div>
 
-            <i class="material-icons" alt="Organisme de formation" title="Organisme de formation">account_balance</i>
-            <div class="organisme">
-                <p>Organisme de fromation</p>
-            </div>
+                <div class="section section_domaine">
+                    <i class="detail_icon material-icons" alt="Domaine de formation" title="Domaine de formation">business</i>
+                    <div class="domaine">
+                        <p>Domaine de formation</p>
+                    </div>
+                </div>
 
-            <i class="material-icons" alt="Nombre de places disponibles" title="Nombre de places disponibles">event_seat</i>
-            <div class="place">
-                <p>Nombre de place</p>
-            </div>
+                <div class="section section_certifiante">
+                    <img class="detail_icon" src="{{ asset('img/Certifiante.svg') }}" alt="Formation certifiante" title="Formation certifiante">
+                    <div class="certifiante">
+                        <p>Formation Certifiante</p>
+                    </div>
+                </div>
 
-            <div class="domaine">
-                <p>Domaine de formation</p>
-            </div>
+                <div class="section section_eligibilite">
+                    <img class="detail_icon" src="{{ asset('img/icone-formation-eligible-CPF.svg') }}" alt="Éligibilité CPF" title="Éligibilité CPF">
+                    <div class="cpf">
+                        <p>Éligibilité CPF</p>
+                    </div>
+                </div>
 
-            <img src="{{ asset('img/Certifiante.svg') }}" alt="Formation certifiante" title="Formation certifiante">
-            <div class="certifiante">
-                <p>Formation Certifiante</p>
-            </div>
+                <div class="section section_rythme">
+                    <div class="rythme_formation">
+                        <i class="detail_icon material-icons" alt="Rythme de formation" title="Rythme de formation">autorenew</i>
+                        <div class="rythme" onclick="toggleClass('.collapse_rythme','display')">
+                            <p>Rythme de formation</p>
+                            <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                        </div>
+                    </div>
+                    <div class="collapse_rythme">
+                        <p>Nombre d'heures en centre :</p>
+                        <p>Nombre d'heures en entreprise :</p>
+                        <p>Nombre d'heures total :</p>
+                    </div>
+                </div>
 
-            <img src="{{ asset('img/eligibilite-cpf.svg') }}" alt="Éligibilité CPF" title="Éligibilité CPF">
-            <div class="cpf">
-                <p>Éligibilité CPF</p>
             </div>
-
-            <button class="rythme">
-                <p>Rythme de formation</p>
-                <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
-            </button>
-            <div class="collapse_cpf">
-                <p>Nombre d'heures en centre :</p>
-                <p>Nombre d'heures en entreprise :</p>
-                <p>Nombre d'heures total :</p>
-            </div>
-
         </div>
-        <div class="section ">
+
+        <div class="section_container section_info_formation">
+
+            <div class="section section_objectif">
+                <div class="accordeon objectif_formation" onclick="toggleClass('.collapse_objectif','display')">
+                    <p>Les objectifs de la formation</p>
+                    <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                </div>
+                <div class="section_container collapse_objectif">
+                    <div class="desc">
+                        <p><strong>L'objectif</strong></p>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Quisque faucibus pharetra risus nec pretium. Quisque sit amet vulputate enim. 
+                        In sit amet dolor molestie, sodales elit in, fringilla nunc. 
+                        Vestibulum vel elementum nulla, at varius ex. 
+                        Pellentesque non nulla aliquet, ultrices diam vel, ornare tortor. 
+                        Nulla facilisi. Nulla tempus velit mauris, vitae dapibus lectus consequat a.
+                        </p>
+                    </div>
+                    <div class="desc">
+                        <p>Résultats attendus</p>
+                    </div>
+                    <div class="desc">
+                        <p>Contenu formation</p>
+                    </div>
+                    <div class="desc">
+                        <div class="parcours" onclick="toggleClass('.parcours_collapse','display')">
+                            <p>Pacrours formation</p>
+                            <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                        </div>
+                        <div class="menu_collapse parcours_collapse">
+                            <p>Nombre d'heures cm</p>
+                            <p>Nombre d'heures td</p>
+                            <p>Nombre d'heures tp tuteur</p>
+                            <p>Nombre d'heures tp non tuteur sous modules</p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>Moyens pédagogique</p>
+                    </div>
+                    <div class="desc">
+                        <p>Modalités pédagogiques</p>
+                    </div>
+                    <div class="desc">
+                        <p>Modules prérequis</p>
+                    </div>
+                    <div class="desc">
+                        <p>Validations</p>
+                    </div>
+                    <div class="desc">
+                        <p>Url formation</p>
+                    </div>
+                    <div class="desc">
+                        <p>Certification</p>
+                    </div>
+                    <div class="desc">
+                        <p>Langue formation</p>
+                    </div>
+                    <div class="desc">
+                        <p>Durée interactive</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section section_modalites">
+                <div class="accordeon modalites_formation" onclick="toggleClass('.collapse_modalites','display')">
+                    <p>Modalités</p>
+                    <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                </div>
+                <div class="section_container collapse_modalites">
+                    <div class="desc">
+                        <p>Code public visé</p>
+                    </div>
+                    <div class="desc">
+                        <p>Conditions spécifiques</p>
+                    </div>
+                    <div class="desc">
+                        <div class="modalites_entre_sortie" onclick="toggleClass('.modalites_collapse_desc','display')">
+                            <p>Modalités Entrées /  Sorties</p>
+                            <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                        </div>
+                        <div class="menu_collapse modalites_collapse_desc">
+                            <p>Niveau d'entrée obligatoire</p>
+                            <p>Code niveau d'entrée</p>
+                            <p>Code niveau de sortie</p>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p>Modalités alternance</p>
+                    </div>
+                    <div class="desc">
+                        <p>Modalités recrutement</p>
+                    </div>
+                    <div class="desc">
+                        <p>Modalités enseignement</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section section_organisme">
+                <div class="accordeon organisme_formation" onclick="toggleClass('.collapse_organisme','display')">
+                    <p>Organisme</p>
+                    <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                </div>
+                <div class="section_container collapse_organisme">
+                    <div class="desc">
+                        <p>Organisme formation responsable</p>
+                    </div>
+                    <div class="desc">
+                        <p>Nom organisme</p>
+                    </div>
+                    <div class="desc">
+                        <p>Raison sociale</p>
+                    </div>
+                    <div class="desc">
+                        <p>Siret Organisme de formation</p>
+                    </div>
+                    <div class="desc">
+                        <p>Coordonnées de l'organisme</p>
+                    </div>
+                    <div class="desc">
+                        <p>Contact organisme</p>
+                    </div>
+                    <div class="desc">
+                        <p>Responsable enseignement</p>
+                    </div>
+                    <div class="desc">
+                        <p>Contact formation</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="section section_financement">
+                <div class="accordeon financement_formation" onclick="toggleClass('.collapse_financement','display')">
+                    <p>Financement</p>
+                    <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+                </div>
+                <div class="section_container collapse_financement">
+                    <div class="desc">
+                        <p>Financement formation</p>
+                    </div>
+                    <div class="desc">
+                        <p>Organisme financeur</p>
+                    </div>
+                    <div class="desc">
+                        <p>Adresse d'inscription</p>
+                    </div>
+                    <div class="desc">
+                        <p>Période d'inscription</p>
+                    </div>
+                    <div class="desc">
+                        <p>Conventionnement</p>
+                    </div>
+                    <div class="desc">
+                        <p>Durée conventionnée</p>
+                    </div>
+                    <div class="desc">
+                        <p>Prix total TTC</p>
+                    </div>
+                    <div class="desc">
+                        <p>Frais restants</p>
+                    </div>
+                    <div class="desc">
+                        <p>Prise en charge des frais possible</p>
+                    </div>
+                    <div class="desc">
+                        <p>Détail conditions de prise en charge</p>
+                    </div>
+                    <div class="desc">
+                        <p>Crédits ects</p>
+                    </div>
+                    <div class="desc">
+                        <p>Renseignements spécifiques</p>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
 
     </div>

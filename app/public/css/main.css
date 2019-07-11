@@ -238,6 +238,28 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
   max-width: 700px;
 }
 
+#results .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#results .modal:not(.show) {
+  display: none;
+}
+
+#results .modal .inner {
+  background-color: #FFFFFF;
+  padding: 20px;
+}
+
 #results .searchBar {
   padding: 40px;
   display: flex;
@@ -283,6 +305,15 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
   margin: 0 0 40px 0;
 }
 
+#results .wrapper .container.filters .group {
+  display: flex;
+  flex-direction: column;
+}
+
+#results .wrapper .container.filters .btn {
+  margin: 0 0 50px 0;
+}
+
 #results .wrapper .container.results {
   width: 75%;
 }
@@ -299,7 +330,7 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
 
 #results .wrapper .container.results .toolbar .nbresults {
   flex-grow: 1;
-  color: #646463;
+  color: #C9C7C7;
   align-self: center;
 }
 
@@ -310,12 +341,76 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
   background: none;
 }
 
+#results .wrapper .container.results .toolbar button:hover {
+  cursor: pointer;
+}
+
+#results .wrapper .container.results .toolbar button.export {
+  background-color: #009EC1;
+  color: #FFFFFF;
+  margin: 0 0 0 100px;
+}
+
+#results .wrapper .container.results .toolbar button.order {
+  margin: 0 10px;
+}
+
+#results .wrapper .container.results .listing {
+  overflow-y: scroll;
+}
+
 #results .wrapper .container.results .listing .formation {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 #results .wrapper .container.results .listing .formation:nth-child(even) {
   background-color: #FFFFFF;
+}
+
+#results .wrapper .container.results .listing .formation:hover {
+  cursor: pointer;
+}
+
+#results .wrapper .container.results .listing .formation:hover .see-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  color: #FFFFFF;
+  z-index: 10;
+  font-size: 30px;
+  background-color: rgba(0, 56, 83, 0.3);
+  border-radius: 22px;
+}
+
+#results .wrapper .container.results .listing .formation:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #009EC1;
+  opacity: 0.3;
+}
+
+#results .wrapper .container.results .listing .formation .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#results .wrapper .container.results .listing .formation .see-more {
+  display: none;
 }
 
 /********** REGISTER **********/
@@ -496,6 +591,139 @@ h4, h5, h6, img, ul, ol, li, span, div, button, form, label, input, textarea, se
   display: none !important;
 }
 
+.main_detail {
+  position: relative;
+}
+
+.detail_title {
+  background-color: white;
+  display: flex;
+  padding: 1em;
+}
+
+.detail_title h1 {
+  font-size: 1.2em;
+  padding-left: 1em;
+}
+
+.section_container {
+  padding: 2em;
+}
+
+@media screen and (min-width: 1000px) {
+  .section_container {
+    padding: 2em 4em;
+  }
+}
+
+.section_container .section {
+  padding: 1em 0;
+  display: flex;
+}
+
+.section_container .section .detail_icon {
+  padding-right: 1em;
+}
+
+.section_container .section .rythme {
+  display: flex;
+  flex-direction: row;
+  background-color: none;
+}
+
+.section_container .section .collapse_rythme {
+  display: none;
+}
+
+.section_container .section .rythme_formation {
+  display: flex;
+  cursor: pointer;
+}
+
+.section_container .section .accordeon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #009EC1;
+  padding: 1em 2em;
+  color: white;
+  cursor: pointer;
+}
+
+.section_container .section_rythme {
+  flex-direction: column;
+}
+
+.section_container .section_objectif,
+.section_container .section_modalites,
+.section_container .section_organisme,
+.section_container .section_financement {
+  flex-direction: column;
+  margin: 0 -2em;
+}
+
+.section_container .section_objectif .collapse_objectif,
+.section_container .section_objectif .collapse_modalites,
+.section_container .section_objectif .collapse_organisme,
+.section_container .section_objectif .collapse_financement,
+.section_container .section_modalites .collapse_objectif,
+.section_container .section_modalites .collapse_modalites,
+.section_container .section_modalites .collapse_organisme,
+.section_container .section_modalites .collapse_financement,
+.section_container .section_organisme .collapse_objectif,
+.section_container .section_organisme .collapse_modalites,
+.section_container .section_organisme .collapse_organisme,
+.section_container .section_organisme .collapse_financement,
+.section_container .section_financement .collapse_objectif,
+.section_container .section_financement .collapse_modalites,
+.section_container .section_financement .collapse_organisme,
+.section_container .section_financement .collapse_financement {
+  display: none;
+}
+
+.section_container .desc {
+  padding: 1em 0;
+}
+
+.section_container .menu_collapse {
+  padding-left: 1em;
+}
+
+.section_container .parcours,
+.section_container .modalites_entre_sortie {
+  display: flex;
+  cursor: pointer;
+}
+
+.section_container .parcours_collapse,
+.section_container .modalites_collapse_desc {
+  display: none;
+}
+
+.section_pratique {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #C9C7C7;
+}
+
+@media screen and (min-width: 1000px) {
+  .section_pratique {
+    flex-wrap: nowrap;
+  }
+}
+
+.section_pratique .section_restauration,
+.section_pratique .section_transport,
+.section_pratique .section_hebergement,
+.section_pratique .section_accessible {
+  width: 50%;
+}
+
+.display {
+  display: block !important;
+}
+
 /*********** MAIN ***********/
 /****************************/
 * {
@@ -507,28 +735,35 @@ body {
   background-color: #f7f7f7;
 }
 
-input,
+input:not([type="checkbox"]):not(#searchBar),
 select {
   min-height: 44px;
   border-radius: 22px;
+  outline: none;
+  padding: 0 11px;
+  background-color: #C9C7C7;
 }
 
 .btn {
   padding: 0.5em 5em;
-  color: white;
+  color: #C9C7C7;
   border-radius: 3em;
+  border: 1px solid #C9C7C7;
   font-size: 1.2em;
   transition: 0.3s;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .btn:hover {
-  background-color: rgba(0, 158, 193, 0);
+  background-color: #C9C7C7;
+  color: #000000;
 }
 
 .btn.btn_blue {
   background-color: #009EC1;
   border: 1px solid #009EC1;
+  color: #FFFFFF;
 }
 
 .btn.btn_blue:hover {
