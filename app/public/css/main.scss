@@ -1,0 +1,58 @@
+$lightblue: #009EC1;
+$darkblue: #003853;
+$white: #FFFFFF;
+$lightgrey: #C9C7C7;
+$darkgrey: #646463;
+$black: #000000;
+$desktop: 1000px;
+
+@import "reset.scss";
+@import "header.scss";
+@import "home.scss";
+@import "trainingResults.scss";
+@import "register.scss";
+@import "trainingDetails.scss";
+
+/*********** MAIN ***********/
+/****************************/
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+input:not([type="checkbox"]):not(#searchBar),
+select {
+    min-height: 44px;
+    border-radius: 22px;
+    outline: none;
+    padding: 0 11px;
+    background-color: $lightgrey;
+}
+
+.btn {
+    padding: 0.5em 5em;
+    color: $lightgrey;
+    border-radius: 3em;
+    border: 1px solid $lightgrey;
+    font-size: 1.2em;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover {
+        background-color: $lightgrey;
+        color: $black;
+    }
+    &.btn_blue {
+        background-color: $lightblue;
+        border: 1px solid $lightblue;
+        color: $white;
+        &:hover {
+            color: #009ec1;
+            background-color: rgba(0,158,193,0);
+        }
+    }
+}

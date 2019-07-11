@@ -1,0 +1,71 @@
+{% include 'header.html.twig' %}
+
+<main id="details">
+
+    <div>
+
+        <div class="section main_detail">
+            <h1>Intitulé de Formation pour personne de tout genre y compris non-binaire</h1>
+            <h2>Informations Principales</h2>
+
+            <div class="lieu">
+                <i class="material-icons" alt="Lieu de formation" title="Lieu de formation">location_on</i>
+                <div class="adresse">
+                    <p>Ville</p>
+                    <p>Code Postal</p>
+                    <p>Addresse</p>
+                </div>
+            </div>
+
+            <i class="material-icons" alt="Période de formation" title="Période de formation">calendar_today</i>
+            <div class="periode">
+                <p>Période</p>
+            </div>
+
+            <div class="session">
+                <p>Session</p>
+            </div>
+
+            <i class="material-icons" alt="Organisme de formation" title="Organisme de formation">account_balance</i>
+            <div class="organisme">
+                <p>Organisme de fromation</p>
+            </div>
+
+            <i class="material-icons" alt="Nombre de places disponibles" title="Nombre de places disponibles">event_seat</i>
+            <div class="place">
+                <p>Nombre de place</p>
+            </div>
+
+            <div class="domaine">
+                <p>Domaine de formation</p>
+            </div>
+
+            <img src="{{ asset('img/Certifiante.svg') }}" alt="Formation certifiante" title="Formation certifiante">
+            <div class="certifiante">
+                <p>Formation Certifiante</p>
+            </div>
+
+            <img src="{{ asset('img/eligibilite-cpf.svg') }}" alt="Éligibilité CPF" title="Éligibilité CPF">
+            <div class="cpf">
+                <p>Éligibilité CPF</p>
+            </div>
+
+            <button class="rythme">
+                <p>Rythme de formation</p>
+                <i class="material-icons button-icon rotate">keyboard_arrow_down</i>
+            </button>
+            <div class="collapse_cpf">
+                <p>Nombre d'heures en centre :</p>
+                <p>Nombre d'heures en entreprise :</p>
+                <p>Nombre d'heures total :</p>
+            </div>
+
+        </div>
+        <div class="section ">
+        </div>
+
+    </div>
+
+</main>
+
+{% include('footer.html.twig') %}

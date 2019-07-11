@@ -28,3 +28,7 @@
 ###< friendsofphp/php-cs-fixer ###
 phpDocumentor.phar
 /.idea/
+
+###< behat/symfony2-extension ###
+/docs/technical/
+

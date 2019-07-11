@@ -1,0 +1,36 @@
+-- Doctrine Migration File Generated on 2019-07-11 15:17:51
+
+-- Version 20190711131710
+ALTER TABLE code_nsf ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE code_rome ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE code_formacode ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE code_certifinfo ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE code_rncp ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE coordonnees_organisme ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE lieu_de_formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE domaine_formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE contact_formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE session ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE contact_organisme ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE adresse_inscription ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE siret_organisme_formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE contact_formateur ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE url_formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE potentiel ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE organisme_financeur ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE certification ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE date_information ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE siret_formateur ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE url_action ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE resume_offre ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE module_prerequis ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE sous_module ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE resume_organisme ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE formation ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE contact_formation_resume ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE adresse ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE action ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE organisme_formation_responsable ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE organisme_formateur ADD name VARCHAR(255) NOT NULL;
+ALTER TABLE coordonnees ADD name VARCHAR(255) NOT NULL;
+INSERT INTO migration_versions (version, executed_at) VALUES ('20190711131710', CURRENT_TIMESTAMP);
