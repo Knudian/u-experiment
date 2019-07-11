@@ -45,3 +45,5 @@ vendor/bin/phpstan analyse -l 7 -c phpstan.neon src tests
 ```bash
 vendor/bin/phpinsights
 ```
+### OpenAPI
+Un fichier `openapi.json` est présent dans le dossier `app` de ce repository.
