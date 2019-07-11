@@ -26,11 +26,29 @@ class CodeRome
     private $libelle;
 
     /**
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function __toString()
     {
-        return $this->id;
+        return $this->name;
     }
 
     public function getId(): ?string
