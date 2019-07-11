@@ -7,6 +7,10 @@ default:
                 - DomainAuthorizationContext
                 - DataExportContext
                 - UserRegisterContext
+                - ForgottenPasswordContext
+                - ConsultTrainingCatalogueContext
+                - SearchTrainingCatalogueContext
+                
     extensions:
         Behat\Symfony2Extension:
             kernel:
