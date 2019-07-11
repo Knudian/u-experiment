@@ -60,17 +60,6 @@ final class User implements UserInterface
      */
     protected $resetToken;
 
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    private $confirmationPassword;
-
-    /**
-     * @var string
-     * @ORM\Column(type="string")
-     */
-    private $siret;
 
     public function getId(): ?int
     {
@@ -176,27 +165,5 @@ final class User implements UserInterface
      */
     public function eraseCredentials(): void
     {
-    }
-
-    public function getSiret(): ?string
-    {
-        return $this->siret;
-    }
-
-    public function setSiret(string $siret): self
-    {
-        $this->siret = $siret;
-        return $this;
-    }
-
-    public function getConfirmationPassword(): ?string
-    {
-        return $this->confirmationPassword;
-    }
-
-    public function setConfirmationPassword(string $confirmationPassword): self
-    {
-        $this->confirmationPassword = $confirmationPassword;
-        return $this;
     }
 }
