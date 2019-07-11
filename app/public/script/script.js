@@ -79,3 +79,12 @@ if ((loginForm && registrationForm) != null) {
     }
   })
 }
+
+document.querySelector('.filters .icon').addEventListener('click', function () {
+    document.querySelector('.filters').classList.toggle('show');
+    if (document.querySelector('.filters .icon').innerHTML == "filter_list") {
+        document.querySelector('.filters .icon').innerHTML = "close";
+    } else {
+        document.querySelector('.filters .icon').innerHTML = "filter_list";
+    }
+});

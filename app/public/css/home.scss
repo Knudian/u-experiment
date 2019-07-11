@@ -1,10 +1,8 @@
 #home {
     input:not([type=checkbox]):not(#searchBar),
     select {
-        min-height: 44px;
-        border-radius: 22px;
         outline: none;
-        padding: 0 11px;
+        padding: 11px;
         background-color: #f7f7f7;
         width: 100%;
     }
@@ -49,10 +47,39 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+                position: relative;
+                z-index: -1;
+                margin: 0 0 20px 0;
+                @media screen and (min-width: $desktop) {
+                    margin: 0 0 50px 0;
+                }
+                .domain {
+                    font-size: 14px;
+                    margin: 0 0 20px 0;
+                    color: $darkgrey;
+                }
+                .title {
+                    font-size: 16px;
+                    font-weight: bold;
+                    @media screen and (min-width: $desktop) {
+                        font-size: 20px;
+                    }
+                }
+                .date {
+                    font-size: 10px;
+                    font-weight: lighter;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    color: $lightgrey;
+                }
             }
             .h2 {
                 text-align: center;
-                margin: 0 0 50px 0;
+                margin: 0 0 20px 0;
+                @media screen and (min-width: $desktop) {
+                    margin: 0 0 50px 0;
+                }
             }
         }
     }
@@ -112,6 +139,7 @@
             display: flex;
             justify-content: center;
             padding: 20px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
             &:not(.show) {
                 display: none;
             }
@@ -121,8 +149,30 @@
                 flex-wrap: wrap;
                 max-width: 700px;
                 .field {
-                    width: 50%;
+                    width: 100%;
+                    @media screen and (min-width: $desktop) {
+                        width: 50%;
+                    }
                     padding: 10px;
+                    label {
+                        margin: 0 0 5px 0;
+                        display: inline-block;
+                    }
+                }
+                .btn {
+                    margin: 20px 0 0 0;
+                }
+                .group {
+                    div {
+                        display: flex;
+                        justify-content: flex-end;
+                        label {
+                            color: $darkgrey;
+                        }
+                    }
+                }
+                input[type=checkbox] {
+                    margin: 0 0 0 10px;
                 }
             }
         }

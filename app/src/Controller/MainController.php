@@ -11,7 +11,8 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        $page_title = 'La page';
+        $page_title = 'Titre de la page';
+        $site_about = 'Texte descriptif du site';
         // liste des intitulés de domaines professionnels
         $list_domain = [
           'domaine1',
@@ -44,17 +45,37 @@ class MainController extends AbstractController
         // liste des dernières formations ajoutées
         $lastAdded = [
             [
-                'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombagations canigou',
-                'domain' => 'btp'
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
+            ],
+            [
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
+            ],
+            [
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
             ]
         ];
         // liste des dernières formations ajoutées
         $lastUpdated = [
             [
-                'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombagations canigou',
-                'domain' => 'btp'
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
+            ],
+            [
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
+            ],
+            [
+                'date' => '05/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services'
             ]
         ];
 
@@ -62,6 +83,7 @@ class MainController extends AbstractController
           'index.html.twig',
           [
             'page_title' => $page_title,
+            'site_about' => $site_about,
             'list_domain' => $list_domain,
             'list_job' => $list_job,
             'lastAdded' => $lastAdded,
@@ -81,7 +103,7 @@ class MainController extends AbstractController
      */
     public function trainingResults () {
 
-        $page_title = 'La page';
+        $page_title = 'Titre de la page';
         // liste des intitulés de domaines professionnels
         $list_domain = [
           'domaine1',
@@ -121,29 +143,146 @@ class MainController extends AbstractController
         // liste des formations (résultats d'un recherche)
         $list_formation = [
             [
-                'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombages canins',
-                'domain' => 'btp',
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
                 'certif' => 1,
                 'seats' => 25,
-                'session_start' => '12/12/1222',
-                'session_end' => '20/20/2000',
-                'training_organiz' => 'EMEI Angers',
-                'city' => 'Palourdes',
-                'departement' => 74,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
                 'pta' => 0
             ],
             [
-                'date' => '01/01/1991',
-                'title' => 'plombiste spécialisationné en plombages canins',
-                'domain' => 'btp',
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
                 'certif' => 1,
                 'seats' => 25,
-                'session_start' => '12/12/1222',
-                'session_end' => '20/20/2000',
-                'training_organiz' => 'EMEI Angers',
-                'city' => 'Palourdes',
-                'departement' => 74,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
+                'pta' => 0
+            ],
+            [
+                'date' => '5/07/2019',
+                'title' => "2438 - Qualification - Technicien(ne) supérieur(e) en système d'information géographique (TP) Niveau III",
+                'domain' => 'Logiciels/outils/applications/services',
+                'certif' => 1,
+                'seats' => 25,
+                'session_start' => '15/08/2019',
+                'session_end' => '20/12/2019',
+                'training_organiz' => 'AFPA',
+                'city' => 'Angers',
+                'departement' => 49,
                 'pta' => 0
             ]
         ];
@@ -170,11 +309,11 @@ class MainController extends AbstractController
 
 
     /**
-     * @Route(name="trainingDetails",path="/formation")
+     * @Route(name="trainingDetails",path="/formation/id")
      */
     public function trainingDetails () {
 
-        $page_title = 'La page';
+        $page_title = 'Titre de la page';
         // Détail d'une formation
         $formation = [
             [

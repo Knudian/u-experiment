@@ -5,7 +5,7 @@
 
     <div class="container">
 
-        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="text">{{ site_about }}</p>
 
     </div>
 
@@ -93,7 +93,6 @@
                     </div>
 
                     <div class="field">
-
                         <label for="time">Durée (heure)</label>
                         <input type="number" name="time">
                     </div>
@@ -102,23 +101,25 @@
 
                         <div class="group">
                             <span>Statut</span>
-                            <label for="employee">Salarié</label>
-                            <input type="checkbox" name="employee">
 
-                            <label for="unemployed">Demandeur d'emploi</label>
-                            <input type="checkbox" name="unemployed">
+                            <div>
+                                <label for="employee">Salarié</label>
+                                <input type="checkbox" name="employee">
+                            </div>
+                            <div>
+                                <label for="unemployed">Demandeur d'emploi</label>
+                                <input type="checkbox" name="unemployed">
+                            </div>
                         </div>
                     </div>
 
                     <div class="field">
-
                         <label for="cpf">Formation éligible CPF</label>
                         <input type="checkbox" name="cpf">
                     </div>
 
                     <div class="field">
-
-                        <label for="started">Afficher les formations déjà commencées</label>
+                        <label for="started">Formations déjà commencées</label>
                         <input type="checkbox" name="started">
                     </div>
 
@@ -147,9 +148,9 @@
             {% for formation in lastAdded %}
             {% if loop.index < 4 %}
             <div class="card">
-                <span>{{ formation.domain }}</span>
-                <p>{{ formation.title }}</p>
-                <span>{{ formation.date }}</span>
+                <span class="domain">{{ formation.domain }}</span>
+                <p class="title">{{ formation.title }}</p>
+                <span class="date">{{ formation.date }}</span>
             </div>
             {% endif %}
             {% endfor %}
@@ -165,9 +166,9 @@
             {% for formation in lastUpdated %}
             {% if loop.index < 4 %}
             <div class="card">
-                <span>{{ formation.domain }}</span>
-                <p>{{ formation.title }}</p>
-                <span>{{ formation.date }}</span>
+                <span class="domain">{{ formation.domain }}</span>
+                <p class="title">{{ formation.title }}</p>
+                <span class="date">{{ formation.date }}</span>
             </div>
             {% endif %}
             {% endfor %}

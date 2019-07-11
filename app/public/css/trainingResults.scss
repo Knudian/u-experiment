@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 100;
+        z-index: 1000;
         &:not(.show) {
             display: none;
         }
@@ -23,20 +23,35 @@
             p {
                 margin: 0 0 20px 0;
             }
+            div {
+                display: flex;
+            }
+            .btn {
+                margin: 0 5px;
+                padding: 10px 20px;
+            }
         }
     }
     .searchBar {
-        padding: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-        z-index: 30;
+        z-index: 300;
         position: relative;
+        min-height: 44px;
+        padding: 10px;
+        @media screen and (min-width: $desktop) {
+            padding: 40px;
+            height: auto;
+        }
         .searchInput {
-            font-size: 40px;
+            font-size: 20px;
             background: none;
             color: $darkgrey;
+            @media screen and (min-width: $desktop) {
+                font-size: 40px;
+            }
         }
         .searchIcon {
             font-size: 40px;
@@ -48,22 +63,49 @@
         .container {
             width: 100%;
             &.filters {
-                width: 25%;
-                max-width: 500px;
+                position: absolute;
+                right: 100%;
                 background-color: $white;
-                box-shadow: 6px 6px 10px rgba(0,0,0,0.16);
+                box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
                 display: flex;
                 flex-direction: column;
                 padding: 20px;
-                z-index: 20;
+                z-index: 200;
+                @media screen and (min-width: $desktop) {
+                    position: static;
+                    width: 25%;
+                    max-width: 500px;
+                    .inner {
+                        position: sticky;
+                        top: 0;
+                        display: flex;
+                        flex-direction: column;
+                        max-height: 100vh;
+                        padding: 20px 0;
+                    }
+                }
+                &.show {
+                    right: auto;
+                    .filters-title {
+                        .icon {
+                            left: auto;
+                            right: 10px;
+                            top: 22px;
+                        }
+                    }
+                }
                 input:not([type=checkbox]):not(#searchBar),
                 select {
-                    min-height: 44px;
-                    border-radius: 22px;
                     outline: none;
-                    padding: 0 11px;
+                    padding: 8px 10px;
                     background-color: #f7f7f7;
                     width: 100%;
+                    margin: 0 0 10px 0;
+                    font-size: 12px;
+                }
+                label {
+                    margin: 0 0 5px 5px;
+                    font-size: 12px;
                 }
                 input[type=number] {
                     -moz-appearance: textfield;
@@ -74,20 +116,50 @@
                         -o-appearance: none;
                     }
                 }
+                .group {
+                    margin: 0 0 20px 0;
+                    div {
+                        display: flex;
+                        justify-content: flex-end;
+                        label {
+                            color: $darkgrey;
+                        }
+                    }
+                }
+                input[type=checkbox] {
+                    margin: 0 0 0 10px;
+                }
                 .filters-title {
-                    font-size: 30px;
-                    margin: 0 0 40px 0;
+                    font-size: 16px;
+                    margin: 0 0 20px 0;
+                    display: flex;
+                    align-items: center;
+                    color: $darkgrey;
+                    .icon {
+                        position: absolute;
+                        left: calc(100% + 20px);
+                        margin: 0 10px 0 0;
+                        top: 30px;
+                        @media screen and (min-width: $desktop) {
+                            position: static;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
                 }
                 .group {
                     display: flex;
                     flex-direction: column;
                 }
                 .btn {
-                    margin: 0 0 50px 0;
+                    margin: 0 0 20px 0;
                 }
             }
             &.results {
-                width: 75%;
+                @media screen and (min-width: $desktop) {
+                    width: 75%;
+                }
                 .toolbar {
                     background-color: $white;
                     box-shadow: 0 3px 6px rgba(0,0,0,0.16);
@@ -95,37 +167,51 @@
                     width: 100%;
                     display: flex;
                     z-index: 10;
-                    position: relative;
+                    position: sticky;
+                    top: 0;
+                    justify-content: flex-end;
+                    z-index: 100;
                     .nbresults {
                         flex-grow: 1;
                         color: $lightgrey;
                         align-self: center;
+                        display: none;
+                        @media screen and (min-width: $desktop) {
+                            display: inherit;
+                        }
+                    }
+                    select {
+                        background-color: #f7f7f7;
+                        padding: 0 10px;
                     }
                     button {
                         border-radius: 22px;
                         height: 44px;
                         width: 44px;
                         background: none;
+                        background-color: #f7f7f7;
                         &:hover {
                             cursor: pointer;
                         }
                         &.export {
                             background-color: $lightblue;
                             color: $white;
-                            margin: 0 0 0 100px;
+                            @media screen and (min-width: $desktop) {
+                                margin: 0 0 0 100px;
+                            }
                         }
                         &.order {
-                            margin: 0 10px;
+                            margin: 0 20px;
                         }
                     }
                 }
                 .listing {
-                    overflow-y: scroll;
                     .formation {
                         padding: 20px;
                         display: flex;
                         flex-direction: column;
                         position: relative;
+                        color: $black;
                         &:nth-child(even) {
                             background-color: $white;
                         }
@@ -163,10 +249,26 @@
                         .row {
                             display: flex;
                             justify-content: space-between;
+                            &:not(:last-of-type) {
+                                margin: 0 0 10px 0;
+                            }
+                            span {
+                                display: flex;
+                                align-items: center;
+                                .material-icons {
+                                    margin: 0 10px 0 0;
+                                }
+                            }
+                            .title {
+                                font-weight: bolder;
+                            }
+                            .domaine {
+                                color: $lightgrey;
+                            }
                         }
-                        .see-more {
-                            display: none;
-                        }
+                    }
+                    .see-more {
+                        display: none;
                     }
                 }
             }
