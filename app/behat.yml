@@ -5,7 +5,7 @@ default:
                 - FeatureContext
                 #- AccountValidationContext
                 #- DomainAuthorizationContext
-                #- DataExportContext
+                - DataExportContext
                 - UserRegisterContext
     extensions:
         Behat\Symfony2Extension:
