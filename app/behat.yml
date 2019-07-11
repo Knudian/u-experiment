@@ -6,6 +6,7 @@ default:
                 #- AccountValidationContext
                 #- DomainAuthorizationContext
                 - DataExportContext
+                - UserRegisterContext
     extensions:
         Behat\Symfony2Extension:
             kernel:

@@ -1,0 +1,150 @@
+#results {
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        &:not(.show) {
+            display: none;
+        }
+        .inner {
+            background-color: $white;
+            padding: 20px;
+        }
+    }
+    .searchBar {
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+        z-index: 30;
+        position: relative;
+        .searchInput {
+            font-size: 40px;
+            background: none;
+            color: $darkgrey;
+        }
+        .searchIcon {
+            font-size: 40px;
+            color: $darkgrey;
+        }
+    }
+    .wrapper {
+        display: flex;
+        .container {
+            width: 100%;
+            &.filters {
+                width: 25%;
+                max-width: 500px;
+                background-color: $white;
+                box-shadow: 6px 6px 10px rgba(0,0,0,0.16);
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                z-index: 20;
+                .filters-title {
+                    font-size: 30px;
+                    margin: 0 0 40px 0;
+                }
+                .group {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .btn {
+                    margin: 0 0 50px 0;
+                }
+            }
+            &.results {
+                width: 75%;
+                .toolbar {
+                    background-color: $white;
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+                    padding: 20px;
+                    width: 100%;
+                    display: flex;
+                    z-index: 10;
+                    position: relative;
+                    .nbresults {
+                        flex-grow: 1;
+                        color: $lightgrey;
+                        align-self: center;
+                    }
+                    button {
+                        border-radius: 22px;
+                        height: 44px;
+                        width: 44px;
+                        background: none;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        &.export {
+                            background-color: $lightblue;
+                            color: $white;
+                            margin: 0 0 0 100px;
+                        }
+                        &.order {
+                            margin: 0 10px;
+                        }
+                    }
+                }
+                .listing {
+                    overflow-y: scroll;
+                    .formation {
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        &:nth-child(even) {
+                            background-color: $white;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            .see-more {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                margin: auto;
+                                width: 44px;
+                                height: 44px;
+                                color: $white;
+                                z-index: 10;
+                                font-size: 30px;
+                                background-color: rgba(0, 56, 83, 0.3);
+                                border-radius: 22px;
+                            }
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                background-color: #009EC1;
+                                opacity: 0.3;
+                            }
+                        }
+                        .row {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .see-more {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -29,6 +29,5 @@
 phpDocumentor.phar
 /.idea/
 
-###> behat/symfony2-extension ###
-behat.yml.dist
 ###< behat/symfony2-extension ###
+/docs/technical/
