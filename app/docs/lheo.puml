@@ -1,0 +1,224 @@
+@startuml
+package Administrative {
+    class Pays
+    class Region
+    class Departement
+    class Ville {
+        codePostal: string{5}
+        codeInsee: string{5} = null
+        codeInseeCanton: string{5} = null
+    }
+}
+package External {
+    class CodeCERTIFINFO
+    class CodeRNCP
+    class CodeROME
+    class CodeFORMACODE
+    class CodeNSF
+}
+package LHEO {
+    package XMLStructure {
+        abstract class XMLElement {
+            #name: string
+            #numero: string = null
+            #info: string = null
+            #ref: string = null
+            #id: string = null
+            #idref: string = null
+            #tag: string = null
+            +toXMLString(): string
+        }
+    }
+    abstract class ExtensibleElement {
+        #extras: [] = null
+    }
+    package FirstCircle {
+        class CoordonnesOrganisme
+        class Session {
+            etatRecrutement: DictEtatRecrutement
+        }
+        class ContactOrganisme
+        class DomaineFormation
+        class AdresseInscription
+        class SiretOrganismeFormation
+        class ContactFormation
+        class LieuDeFormation
+    }
+    package SecondCircle {
+        class Potentiel
+        class OrganismeFinanceur {
+            codeFinanceur: DictFinanceurs
+            nbPlaceFinancees: integer /' de 0 à 99999 '/
+        }
+        class Certification
+        class ContactFormateur
+        class UrlAction {
+            urlweb: array<string{3,400}>[1,3]
+        }
+        class SiretFormateur
+        class UrlFormation {
+            urlweb: array<string{3,400}>[1,3]
+        }
+        class DateInformation
+    }
+    package Structures {
+        class SIRET {
+            /'
+                Transformée en trait PHP, afin d'être réutilisée efficacement.
+            '/
+        }
+        class OrganismeFormateur {
+            raisonSocialeFormateur: string{0,250}
+        }
+        class ContactFormationResume {
+            nom: string{1,50} = null
+            telfix: array<phone_number>[1,3] = null
+            courriel: string{3,160} = null
+        }
+        class ResumeOffre {
+            intituleFormation: string
+            codeNiveauEntree: DictNiveaux
+            priseEnChargeFraisPossible: DictBooleen
+            codePublicVise: CodeFORMACODE
+            modalitesEnseignement: DictModaliteEnseignement
+            nomOrganisme: string{1,250}
+            certifiante: DictBooleen
+            nombreheureTotal: integer /' de 0 à 99999 '/
+        }
+        class OrganismeFormationResponsable {
+            numeroActivite: string{11}
+            nomOrganisme: string{1,250}
+            raisonSociale: string{1,250}
+            renseignementSpecifiques: text{1,3000}
+        }
+        class Adresse {
+            ligne: string{1,50}
+            courriel: string{3,160}
+            latitude: string{0,30}
+            longitude: string{0,30}
+        }
+        class Formation {
+            intituleFormation: string
+            parcoursDeFormation: DictTypeParcours
+            codeNiveauEntree: DictNiveaux
+            contenuFormation: text{1,3000}
+            resultatsAttendus: text{1,3000}
+            objectifFormation: text{1,3000}
+            certifiante: DictBooleen
+            identifiantModule: text{1,3000}
+            hebergement: string{1,250}
+            objectifGeneralFormation: DictAIS
+            positionnement: DictTypePositionnement
+            codeNiveauSortie: DictNiveaux
+        }
+        class ModulesPrerequis {
+            referenceModule: array<text{1,3000}>[0,*]
+        }
+        class Coordonnees {
+            nom: string{1,50}
+            prenom: string{1,50}
+            fax: array<phone_number>[1,3]
+            ligne: string{1,50}
+            courriel: string{3,160}
+            telfix: array<phone_number>[1,3] = null
+            portable: array<phone_number>[1,3] = null
+            web: array<string{3,400}>[1,3] = null
+        }
+        class ResumeOrganisme {
+            numeroActivite: string{11}
+            nomOrganisme: string{1,250}
+            raisonSociale: string{1,250}
+        }
+        class Action {
+            modalitesEntreesSorties: DictModalitesES
+            modalitesAlternance: text{1,3000}
+            priseEnChargeFraisPossible: DictBooleen
+            codePublicVise: CodeFORMACODE
+            niveauEntreeObligatoire: DictBooleen
+            modalitesEnseignement: DictModaliteEnseignement
+            rythmeFormation: text{1,3000}
+            conditionsSpécifiques: text{1,3000}
+            nombreHeureCentre: integer /' entre 0 et 99999 '/
+            modalitesRecrutement: text{1,3000}
+            langueFormation: string{2}
+            infoPublicVise: string{1,250}
+            modalitesInscription: string{1,255}
+            nombreHeureEntreprise: integer /' entre 0 et 99999 '/
+            restauration: string{1,250}
+            transport: string{1,250}
+            infosPerimetreRecrutement: string{0,50}
+            dureeConventionnee: integer /' entre 0 et 99999 '/
+            nombreheureTotal: integer /' de 0 à 99999 '/
+            codePerimetreRecrutement: DictPerimetreRecrutement
+            prixHoraireTTC: string{1,6}
+            prixTotalTTC: string{1,10}
+            dureeIndicative: string{1,150}
+            accesHandicapes: string{1,250}
+            codeModalitePedagogique: CodeFORMACODE
+            fraisRestants: string{0,200}
+            modalitesPedagogiques: string{0,200}
+            detailsConditionsPriseEnCharge: text{1,600}
+        }
+        class SousModule {
+            typeModule: DictTypeModule
+            referenceModule: text{1,3000}
+        }
+    }
+    package Dicts{
+        enum Niveaux
+        enum DictTypeModule
+        enum DictBooleen
+        enum DictTypePositionnement
+        enum DictPerimetreRecrutement
+        enum DictModalitesES
+        enum DictFinanceurs
+        enum DictTypeParcours
+        enum DictModaliteEnseignement
+        enum DictAIS
+        enum DictEtatRecrutement
+    }
+}
+package Resources {
+    enum ISO639-1_Codes /' Utilisées pour la langue '/
+}
+/' Relations '/
+CoordonnesOrganisme "1" --- "1" Coordonnees
+Session "1" --- "1" AdresseInscription: adressInscription
+ContactOrganisme "1" --- "1" Coordonnees: coordonnees
+DomaineFormation "1" --- "0,5" CodeFORMACODE
+DomaineFormation "1" --- "0,3" CodeNSF
+DomaineFormation "1" --- "0,5" CodeROME
+
+Formation "1" --- "1" DomaineFormation
+Formation "1" --- "1" ContactFormation
+Formation "1" --- "1" ModulesPrerequis
+ResumeOffre "1" --- "1" DomaineFormation
+AdresseInscription "1" --- "1" Adresse
+
+ContactFormation "1" --- "1" Coordonnees
+LieuDeFormation "1" --- "1" Coordonnees
+Potentiel "1" --- "1,25" CodeFORMACODE
+OrganismeFormateur "1" --- "1" Potentiel
+OrganismeFormationResponsable "1" --- "1" Potentiel
+OrganismeFormationResponsable "1" --- "1" SiretOrganismeFormation
+AdresseInformation "1" --- "1" Adresse
+Certification "1" --- "0,1" CodeRNCP
+Certification "1" --- "0,1" CodeCERTIFINFO
+ContactFormateur "1" --- "1" Coordonnees
+DateInformation "1" --- "1" Date
+SiretOrganismeFormation "1" --- "1" SIRET
+SiretFormateur "1" --- "1" SIRET
+ResumeOrganisme "1" --- "1" SIRET
+ResumeOffre "1" --- "1" SIRET
+Adresse "1" --- "1" Commune
+Action "1" --- "1" LieuDeFormation
+Action "1" --- "1" AdresseInformation
+Action "1" --- "1" UrlAction
+/' Classes de listes retirées '/
+/'
+   SousModules
+   ResumesOffres
+   ResumesOrganismes
+   Offres
+'/
+@enduml

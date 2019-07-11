@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+/*-----------------------------------------------------------------------------------*/
+/*	    Lheo
+/*      Ce fichier contient les styles blocs non-présents dans l'export lheo-web-specs
+/*      ainsi que des styles additionnels
+/*-----------------------------------------------------------------------------------*/
+
+body {
+    font-family: Lato;
+}
+
+/* Bloc image backgrounds */
+
+.bg-office {
+    background-image: url("/static/img/backgrounds/office.jpg");
+}
+
+#bloc-1 {
+    background-image: url("/static/img/backgrounds/gd-public.png");
+}
+#bloc-28,
+#bloc-5,
+#bloc-12 {
+    background-image: url("/static/img/backgrounds/pro.png");
+}
+#bloc-35,
+#bloc-43,
+#bloc-49,
+#bloc-54 {
+    background-image: url("/static/img/backgrounds/dev.png");
+}
+
+/* Bloc text custom styling */
+#bloc-1,
+#bloc-5,
+#bloc-12,
+#bloc-28,
+#bloc-35,
+#bloc-43,
+#bloc-49,
+#bloc-54 {
+    background-size: contain;
+    max-height: 509px;
+    background-position: 3%;
+}
+#bloc-13 {
+    clear: both;
+}
+#bloc-1 h1 {
+    font-size: 50px;
+    padding-top: 10px;
+}
+#bloc-1 p {
+    font-size: 16px;
+}
+#bloc-1 p:last-child {
+    padding-bottom: 10px;
+}
+#bloc-4-1 h1 {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 55px;
+}
+
+#bloc-4-1 h3 {
+    font-size: 26px;
+    font-family: Lato;
+    font-weight: 400;
+}
+
+#bloc-4-1 p {
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+#bloc-4-2 h1 {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 55px;
+}
+
+#bloc-4-2 h3 {
+    font-size: 28px;
+    font-family: Lato;
+    font-weight: 700;
+}
+
+#bloc-4-2 p {
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+#bloc-4-3 h1 {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 55px;
+}
+
+#bloc-4-3 p {
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+#bloc-4-4 h1 {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 44px;
+}
+
+#bloc-4-4 img {
+    max-width: 80%;
+}
+
+#bloc-4-5 h1 {
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 44px;
+}
+
+#bloc-4-5 p {
+    font-size: 18px;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+#bloc-57 a {
+    display: inline;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+#bloc-4-4 {
+    margin-top: 50px;
+}
+.bloc-md {
+    padding: 20px 0;
+}
+
+#bloc-57 .panel {
+    background: #573C82;
+}
+
+.panel-footer {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*
+#lheo-logo {
+    float: left;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: 20px;
+    max-width: 100px;
+}
+*/
+
+.bloc code {
+    background-color: transparent;
+    color: black !important;
+}
+
+a.no-pointer {
+    cursor: default;
+}
+
+.letters {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+a.letter {
+    font-size: 26px;
+    padding-right: 10px;
+}
+
+div.go-top {
+    text-align: right;
+    padding-top: 30px;
+    padding-right: 20px;
+}
+
+ul.elements {
+    line-height: 1;
+}
+
+ul.elements a {
+    color: #333;
+}
+
+ul.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.illustration {
+    position: absolute;
+    top: 0;
+}
+.col-img-2 {
+    padding-top: 40px;
+}
+.col-img-3 {
+    padding-top: 100px;
+}
+.col-img-4 {
+    padding-top: 20px;
+}
+.col-img-5 {
+    padding-top: 20px;
+}
+.col-img-6 {
+    padding-top: 35px;
+}
+table.table {
+    color: black;
+}
+table.table th,
+table.table td {
+    text-align: left;;
+}
+table caption {
+    text-align: left;
+}
+@media (max-width: 480px) {
+    #bloc-1 {
+        max-height: none;
+    }
+    #bloc-1 h1 {
+        font-size: 26px !important;
+    }
+}
+@media (max-width: 767px) {
+    #bloc-4-1 h1,
+    #bloc-4-2 h1,
+    #bloc-4-3 h1,
+    #bloc-4-4 h1 {
+        font-size: 28px;
+    }
+
+    #bloc-4-4 img {
+        max-width: 95%;
+    }
+}
+@media (max-width: 991px) {
+    #bloc-1,
+    #bloc-5,
+    #bloc-12,
+    #bloc-28,
+    #bloc-35,
+    #bloc-43,
+    #bloc-49,
+    #bloc-54 {
+        background-image: none;
+    }
+    #bloc-1 h1,
+    #bloc-5 h3 {
+        font-size: 30px;
+    }
+    #bloc-1 p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1024px) {
+    #bloc-1 {
+        background-position: 3%;
+    }
+    #bloc-1 h1,
+    #bloc-12 h1 {
+        font-size: 30px;
+    }
+    #bloc-1 p,
+    #bloc-12 p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1200px) {
+    #bloc-1 h1,
+    #bloc-5 h1,
+    #bloc-12 h1 {
+        font-size: 40px;
+    }
+    #bloc-1 p,
+    #bloc-12 p {
+        font-size: 15px;
+    }
+}

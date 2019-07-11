@@ -1,0 +1,176 @@
+{% include 'header.html.twig' %}
+
+<main id="home">
+    
+
+<div class="container">
+
+    <h1 class="h1">{{ page_title }}</h1>
+
+    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+</div>
+
+
+
+<div class="container">
+
+
+
+    <div class="search-container">
+        <div id="searchField">
+            <input id="searchBar" type="text" placeholder="Rechercher une formation">
+            <i class="material-icons">search</i>
+        </div>
+    </div>
+
+
+
+    <div class="accordion">
+
+
+
+        <button class="collapsed-button" onclick="toggleClass('.collapsed','show')">
+            <p class="button-title">Recherche avancée</p>
+            <i class="material-icons button-icon">keyboard_arrow_down</i>
+        </button>
+
+
+
+        <div class="collapsed">
+            <div class="filters">
+
+
+
+            <label for="domain">Domaine</label>
+            <select name="domain">
+
+                <option selected>Domaine</option>
+                {% for domain in list_domain %}
+                <option value="{{ domain }}">{{ domain }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="job">Métier</label>
+            <select name="job">
+
+                <option selected>Métier</option>
+                {% for job in list_job %}
+                <option value="{{ job }}">{{ job }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="lvlin">Niveau d'entrée</label>
+            <select name="lvlin">
+
+                <option selected>Niveau</option>
+                {% for lvlin in list_lvlin %}
+                <option value="{{ lvlin }}">{{ lvlin }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="lvlout">Niveau de sortie</label>
+            <select name="lvlout">
+
+                <option selected>Niveau</option>
+                {% for lvlout in list_lvlout %}
+                <option value="{{ lvlout }}">{{ lvlout }}</option>
+                {% endfor %}
+
+            </select>
+
+
+
+            <label for="time">Durée (heure)</label>
+            <input type="number" name="time">
+
+
+
+            <div class="group">
+                <span>Statut</span>
+                <label for="employee">Salarié</label>
+                <input type="checkbox" name="employee">
+
+                <label for="unemployed">Demandeur d'emploi</label>
+                <input type="checkbox" name="unemployed">
+            </div>
+
+
+
+            <label for="cpf">Formation éligible CPF</label>
+            <input type="checkbox" name="cpf">
+
+
+
+            <label for="started">Afficher les formations déjà commencées</label>
+            <input type="checkbox" name="started">
+
+
+
+            <button class="btn btn_blue" type="button" name="button">Rechercher</button>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="container">
+
+
+
+    <div class="col">
+
+        <h2 class="h2">Derniers ajouts</h2>
+
+        {% for formation in lastAdded %}
+        {% if loop.index < 4 %}
+        <div class="card">
+            <span>{{ formation.domain }}</span>
+            <p>{{ formation.title }}</p>
+            <span>{{ formation.date }}</span>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+
+    <div class="col">
+
+        <h2 class="h2">Dernières modifications</h2>
+
+        {% for formation in lastUpdated %}
+        {% if loop.index < 4 %}
+        <div class="card">
+            <span>{{ formation.domain }}</span>
+            <p>{{ formation.title }}</p>
+            <span>{{ formation.date }}</span>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+
+</div>
+
+</main>
+
+{% include('footer.html.twig') %}

@@ -1,0 +1,163 @@
+easy_admin:
+    site_name: 'WISE - BackOffice'
+    user:
+        display_name: true
+    design:
+        brand_color: '#009EC1'
+        menu:
+            - label: 'Gestion des utilisateurs'
+              children:
+                - Utilisateur
+            - label: 'Entités administratives'
+              children:
+                - Pays
+                - Region
+                - Departement
+                - Commune
+            - label: 'Codes'
+              children:
+                - CodeCertifInfo
+                - CodeFormacode
+                - CodeNsf
+                - CodeRncp
+                - CodeRome
+            - label: 'LHEO - Dictionnaires'
+              children:
+                - EtatRecrutement
+                - Financeur
+                - ModaliteEnseignement
+                - ModaliteEntreeSortie
+                - Niveau
+                - ObjectifNiveauFormation
+                - PerimetreRecrutement
+                - TypeModule
+                - TypeParcours
+                - TypePositionnement
+            - label: 'LHEO - Premier cercle'
+              children:
+                - AdresseInscription
+                - ContactFormation
+                - ContactOrganisme
+                - CoordonneesOrganisme
+                - DomaineFormation
+                - LieuDeFormation
+                - Session
+                - SiretOrganismeFormation
+            - label: 'LHEO - Deuxième cercle'
+              children:
+                - Certification
+                - ContactFormateur
+                - DateInformation
+                - OrganismeFinanceur
+                - Potentiel
+                - SiretFormateur
+                - UrlAction
+                - UrlFormation
+            - label: 'Eléments structurels'
+              children:
+                - Action
+                - Adresse
+                - ContactFormationResume
+                - Coordonnees
+                - Formation
+                - ModulePrerequis
+                - Organisme
+                - OrganismeFormationResponsable
+                - ResumeOffre
+                - ResumeOrganisme
+                - SousModule
+    entities:
+        Commune:
+            class: App\Entity\Administrative\Commune
+        Pays:
+            class: App\Entity\Administrative\Country
+        Departement:
+            class: App\Entity\Administrative\Departement
+        Region:
+            class: App\Entity\Administrative\Region
+        CodeCertifInfo:
+            class: App\Entity\External\CodeCERTIFINFO
+        CodeFormacode:
+            class: App\Entity\External\CodeFORMACODE
+        CodeNsf:
+            class: App\Entity\External\CodeNsf
+        CodeRncp:
+            class: App\Entity\External\CodeRNCP
+        CodeRome:
+            class: App\Entity\External\CodeRome
+        EtatRecrutement:
+            class: App\Entity\LHEO\Dicts\EtatRecrutement
+        Financeur:
+            class: App\Entity\LHEO\Dicts\Financeur
+        ModaliteEnseignement:
+            class: App\Entity\LHEO\Dicts\ModaliteEnseignement
+        ModaliteEntreeSortie:
+            class: App\Entity\LHEO\Dicts\ModaliteEntreeSortie
+        Niveau:
+            class: App\Entity\LHEO\Dicts\Niveau
+        ObjectifNiveauFormation:
+            class: App\Entity\LHEO\Dicts\ObjectifGeneralFormation
+        PerimetreRecrutement:
+            class: App\Entity\LHEO\Dicts\PerimetreRecrutement
+        TypeModule:
+            class: App\Entity\LHEO\Dicts\TypeModule
+        TypeParcours:
+            class: App\Entity\LHEO\Dicts\TypeParcours
+        TypePositionnement:
+            class: App\Entity\LHEO\Dicts\TypePositionnement
+        AdresseInscription:
+            class: App\Entity\LHEO\FirstCircle\AdresseInscription
+        ContactFormation:
+            class: App\Entity\LHEO\FirstCircle\ContactFormation
+        ContactOrganisme:
+            class: App\Entity\LHEO\FirstCircle\ContactOrganisme
+        CoordonneesOrganisme:
+            class: App\Entity\LHEO\FirstCircle\CoordonneesOrganisme
+        DomaineFormation:
+            class: App\Entity\LHEO\FirstCircle\DomaineFormation
+        LieuDeFormation:
+            class: App\Entity\LHEO\FirstCircle\LieuDeFormation
+        Session:
+            class: App\Entity\LHEO\FirstCircle\Session
+        SiretOrganismeFormation:
+            class: App\Entity\LHEO\FirstCircle\SiretOrganismeFormation
+        Certification:
+            class: App\Entity\LHEO\SecondCircle\Certification
+        ContactFormateur:
+            class: App\Entity\LHEO\SecondCircle\ContactFormateur
+        DateInformation:
+            class: App\Entity\LHEO\SecondCircle\DateInformation
+        OrganismeFinanceur:
+            class: App\Entity\LHEO\SecondCircle\OrganismeFinanceur
+        Potentiel:
+            class: App\Entity\LHEO\SecondCircle\Potentiel
+        SiretFormateur:
+            class: App\Entity\LHEO\SecondCircle\SiretFormateur
+        UrlAction:
+            class: App\Entity\LHEO\SecondCircle\UrlAction
+        UrlFormation:
+            class: App\Entity\LHEO\SecondCircle\UrlFormation
+        Action:
+            class: App\Entity\LHEO\Structurels\Action
+        Adresse:
+            class: App\Entity\LHEO\Structurels\Adresse
+        ContactFormationResume:
+            class: App\Entity\LHEO\Structurels\ContactFormationResume
+        Coordonnees:
+            class: App\Entity\LHEO\Structurels\Coordonnees
+        Formation:
+            class: App\Entity\LHEO\Structurels\Formation
+        ModulePrerequis:
+            class: App\Entity\LHEO\Structurels\ModulePrerequis
+        Organisme:
+            class: App\Entity\LHEO\Structurels\OrganismeFormateur
+        OrganismeFormationResponsable:
+            class: App\Entity\LHEO\Structurels\OrganismeFormationResponsable
+        ResumeOffre:
+            class: App\Entity\LHEO\Structurels\ResumeOffre
+        ResumeOrganisme:
+            class: App\Entity\LHEO\Structurels\ResumeOrganisme
+        SousModule:
+            class: App\Entity\LHEO\Structurels\SousModule
+        Utilisateur:
+            class: App\Entity\User
