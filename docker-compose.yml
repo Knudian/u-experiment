@@ -21,7 +21,7 @@ services:
             wise_lan:
                 ipv4_address: 10.10.10.20
     nginx:
-        image: nginx:stable
+        build: build/nginx
         depends_on:
             - php
         volumes:

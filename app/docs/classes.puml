@@ -1,0 +1,127 @@
+@startuml
+
+package Administrative {
+    class Country {
+        id: string{2}
+        name: string
+    }
+    class Region {
+        id: integer
+        name: string
+    }
+    class Departement {
+        id: string{3}
+        name: string
+    }
+    class Commune {
+        id: integer
+        name: string
+        codeInsee: string{5}
+        codeCanton: string{5}
+        codePostal: string{5}
+    }
+
+    Country "1" *-- "*" Region : regions
+    Region "1" *-- "*" Departement: departements
+    Departement "1" *-- "*" Commune : communes
+}
+
+package Core {
+    class CodeNsf
+    class CodeRome
+    class CourseDistance
+    class CourseGoal
+    class CourseType
+    class Financer
+    class Grade
+    class InOutSchedule
+    class ModuleType
+    class PositionningType
+    class RecruitmentPerimeter
+    class RecruitmentStatus
+    /' à mettre en place '/
+    class CodeFormacode {
+        version: string
+        name: string
+    }
+    class CodeRNCP
+    class CodeCertifInfo
+    class CodeFormacode
+}
+
+package LHEO {
+    class Adresse {
+        id: integer
+        lignes: string[0,4]
+        latitude: string = null
+        longitude: string = null
+        commune: Commune
+    }
+    class Certification {
+        id: integer
+    }
+    class Contact {
+        id: integer
+        nom: string = null
+        telfixe: phone_number = null
+        courriel: email = null
+
+    }
+    class CodeModalitePedagogique
+    class CodePublicVise
+    class Coordonnees
+    class DateInformation
+    class DomaineFormation
+    class LigneAdresse
+    class ModulePrerequisList
+    class Organisme {
+        /' Attributs "resume" '/
+        id: int
+        siret: string
+        nom: string
+        raisonSociale: string
+        numeroActivite: string
+        /' Attributs "full" ensuite '/
+    }
+    class Periode
+    class Potentiel
+    class ReferenceModule
+    class Offre {
+        /' Attributs "resume" '/
+        id: int
+        intitule: string
+        certifiante: boolean
+        priseEnChargeFraisPossible: boolean
+        nombreHeure: integer
+        /' Attributs "full" ensuite '/
+    }
+    class SiretOrganismeFormation
+    class Telephone
+    class Session {
+        periodeStart: DateTimeImmutable
+        periodeEnd: DateTimeImmutable
+        adresse: Adresse
+        modalities: string = null
+        registrationStart: DateTimeImmutable = null
+        registrationEnd: DateTimeImmutable = null
+    }
+    class UrlWeb
+    class WebLink
+
+    Commune "1" o-- "*" Adresse : commune
+    Offre "1" o-- "1" DomaineFormation : domaineFormation /' Attributs "resume" '/
+    Offre "1" o-- "1" Organisme : organisme /' Attributs "resume" '/
+    Offre "1" o-- "1" Grade : levelIn /' Attributs "resume" '/
+    Offre "1" o-- "1" CourseDistance: modaliteEnseignement /' Attributs "resume" '/
+    Offre "1" o-- "*" CodeFormacode: codePublicVises /' Attributs "resume" '/
+    Offre "1" o-- "*" Session: sessions /' Attributs "resume" '/
+    Offre "1" o-- "1" Contact: contactFormation /' Attributs "resume" '/
+    DomaineFormation "1" o-- "*" CodeFormacode: codeFormacodes
+    DomaineFormation "1" o-- "*" CodeNsf: codeNsfs
+    DomaineFormation "1" o-- "*" CodeRome: codeRomes
+    Certification "1" o-- "O,1" CodeRNCP : codeRncp
+    Certification "1" o-- "0,1" CodeCertifInfo: codeCertifinfo
+    Organisme "1" *-- "*" Contact
+}
+
+@enduml

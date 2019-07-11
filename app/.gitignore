@@ -29,8 +29,6 @@
 phpDocumentor.phar
 /.idea/
 
+###< behat/symfony2-extension ###
+/docs/technical/
 
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###
