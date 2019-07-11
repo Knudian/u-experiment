@@ -60,7 +60,6 @@ final class User implements UserInterface
      */
     protected $resetToken;
 
-
     public function getId(): ?int
     {
         return $this->id;
