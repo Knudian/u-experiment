@@ -25,6 +25,11 @@ class DomaineFormationFixtures extends Fixture
      */
     private $codeRomeRepository;
 
+    /**
+     * DomaineFormationFixtures constructor.
+     * @param CodeNsfRepository $codeNsfRepository
+     * @param CodeRomeRepository $codeRomeRepository
+     */
     public function __construct(CodeNsfRepository $codeNsfRepository, CodeRomeRepository $codeRomeRepository)
     {
         $this->codeNsfRepository = $codeNsfRepository;

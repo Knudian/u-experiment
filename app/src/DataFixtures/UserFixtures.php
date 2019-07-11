@@ -19,11 +19,19 @@ final class UserFixtures extends Fixture
      */
     private $passwordEncoder;
 
+    /**
+     * UserFixtures constructor.
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     */
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
 
+    /**
+     * Fonction permettant de générer des entités User pour simuler le fonctionnement
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager): void
     {
         // Creating 10 users.

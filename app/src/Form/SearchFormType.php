@@ -13,7 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Class SearchFormType
- * 
+ *
  * @package App\Form
  */
 class SearchFormType extends AbstractType
