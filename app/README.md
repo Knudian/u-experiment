@@ -37,6 +37,14 @@ vendor/bin/phpstan analyse -l 7 -c phpstan.neon src tests
 vendor/bin/phpinsights
 ```
 
-### Jouer les tests unitaires
+## Déploiement du projet
 
-### Jouer les tests fonctionnels
+```bash
+git clone project
+cd u-experiment/
+composer install --no-dev --optimize-autoloader
+APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear
+php bin/console app:init
+```
+
+La première commande permet d'installer les dépendances du projet, quand la seconde permet d'initialiser la base de données, ainsi que de mettre en place un jeu conséquent de données (voir la classe `App\Command\InitCommant` pour plus d'informations).
