@@ -9,7 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+/**
+ * Class SearchController
+ *
+ * @package App\Controller
+ */
 class SearchController extends AbstractController
 {
     /**
@@ -17,12 +21,17 @@ class SearchController extends AbstractController
      */
     private $searchService;
 
+    /**
+     * SearchController constructor.
+     * @param SearchService $searchService
+     */
     public function __construct(SearchService $searchService)
     {
         $this->searchService = $searchService;
     }
 
     /**
+     * Page de recherche des formations
      * @Route("/search", name="search")
      * @param Request $request
      * @return Response
@@ -32,28 +41,13 @@ class SearchController extends AbstractController
         $form = $this->createForm(SearchFormType::class);
         $form->handleRequest($request);
 
-        dump($form);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $formations = $this->searchService->search($form->getData());
 
-
-        if ($form->isSubmitted() && $form->isValid()) {
-//            dump($form->getData());
-
-
-            $formations = $this->searchService->search($form);
-
-            dump('Yo Soy a la fiesta');
-
-            /*
-            $repository = $this->getDoctrine()->getRepository(Formation::class);
-            $formations = $repository->findBy(
-                ['intituleFormation' => $request->request->get('search')],
-            );
-            return $this->redirectToRoute('results');*/
-        }
-
+//            return $this->redirectToRoute('results');
+//        }
 
         return $this->render('search/index.html.twig', [
-//            'controller_name' => 'SearchController',
             'searchFormType' => $form->createView()
         ]);
     }

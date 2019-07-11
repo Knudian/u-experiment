@@ -4,8 +4,6 @@ namespace App\Form;
 
 use App\Entity\External\CodeRome;
 use App\Entity\LHEO\Dicts\Niveau;
-use App\Entity\LHEO\FirstCircle\DomaineFormation;
-use App\Entity\LHEO\Structurels\Formation;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -13,19 +11,25 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class SearchFormType
+ * 
+ * @package App\Form
+ */
 class SearchFormType extends AbstractType
 {
+    /**
+     * Formulaire de Recherche de formations
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('search')
-//            ->add('domain')
             ->add('domain', EntityType::class, [
-                // looks for choices from this entity
                 'class' => CodeRome::class,
                 'choice_label' => 'libelle'])
-                // uses the User.username property as the visible option string
-//                'choice_label' => 'codeRomes'])
             ->add('status',ChoiceType::class,array(
                 'choices'  => array(
                     'Salarié' => 1,
@@ -55,10 +59,12 @@ class SearchFormType extends AbstractType
         ;
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-//            'data_class' => Formation::class,
         ]);
     }
 }

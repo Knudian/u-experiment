@@ -2,12 +2,6 @@
 
 namespace App\Service;
 
-use App\Form\SearchFormType;
-use Swift_Mailer;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Form\Form;
-
-
 /**
  * Class SearchService
  *
@@ -15,16 +9,12 @@ use Symfony\Component\Form\Form;
  */
 final class SearchService
 {
-
-
-//    public function __construct()
-//    {
-//
-//    }
-
-    public function search(Form $form)
+    /**
+     * Fonction pour retrouver les formations en fonction des différents critères de recherche
+     * @param array $form
+     */
+    public function search(array $form)
     {
-        dump($form);
 
     }
 
