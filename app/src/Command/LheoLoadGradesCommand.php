@@ -3,7 +3,7 @@
 namespace App\Command;
 
 use App\Command\Dataset\NiveauxList;
-use App\Entity\Niveau;
+use App\Entity\LHEO\Dicts\Niveau;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

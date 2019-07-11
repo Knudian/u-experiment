@@ -1,0 +1,18 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext
+                - AccountValidationContext
+                - DomainAuthorizationContext
+                - DataExportContext
+                - UserRegisterContext
+                - ForgottenPasswordContext
+                - ConsultTrainingCatalogueContext
+                - SearchTrainingCatalogueContext
+                
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
