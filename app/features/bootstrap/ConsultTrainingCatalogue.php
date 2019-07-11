@@ -26,9 +26,9 @@ class ConsultTrainingCatalogueContext implements Context
     /**
      * @Given I press :arg1 button
      */
-    public function iPressButton($arg1)
+    public function iPressButton($link)
     {
-        $this->pressButton();
+        $this->pressButton($link);
     }
 
     /**
