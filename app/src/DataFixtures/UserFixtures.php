@@ -29,11 +29,16 @@ final class UserFixtures extends Fixture
         // Creating 10 users.
         for ($i = 0; $i < 10; $i++) {
             $user = new User();
-            $user->setEmail(sprintf('userdemo%d@example.com', $i));
-            $user->setPassword($this->passwordEncoder->encodePassword(
+            $pwd = $this->passwordEncoder->encodePassword(
                 $user,
                 'userdemo'
-            ));
+            );
+            $user
+                ->setEmail(sprintf('userdemo%d@example.com', $i))
+                ->setPassword($pwd)
+                ->setConfirmationPassword($pwd)
+                ->setSiret('123 456 7890');
+
             $manager->persist($user);
         }
         $manager->flush();
