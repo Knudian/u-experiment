@@ -6,8 +6,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Class Commune
+ * 
  * @ApiResource(itemOperations={"GET"})
  * @ORM\Entity(repositoryClass="App\Repository\Administrative\CommuneRepository")
+ * @package App\Entity\Administrative
  */
 class Commune
 {

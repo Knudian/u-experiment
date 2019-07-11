@@ -27,6 +27,16 @@ abstract class XMLElement
     /** @var string|null */
     protected $tag;
 
+    /**
+     * XMLElement constructor.
+     * @param string $name
+     * @param string|null $numero
+     * @param string|null $info
+     * @param string|null $ref
+     * @param string|null $id
+     * @param string|null $idref
+     * @param string|null $tag
+     */
     public function __construct(
         string $name,
         string $numero = null,
@@ -45,6 +55,9 @@ abstract class XMLElement
         $this->tag = $tag;
     }
 
+    /**
+     * @return array
+     */
     private function getAttributes(): array
     {
         return [
@@ -58,7 +71,7 @@ abstract class XMLElement
     }
 
     /**
-     * Generates an XML Element for the
+     * Generates an XML Element for the entity
      * @param string $content
      * @return string
      */
