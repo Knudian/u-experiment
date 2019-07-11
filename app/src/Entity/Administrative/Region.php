@@ -43,6 +43,13 @@ class Region
     {
         $this->departements = new ArrayCollection();
     }
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function getId(): ?int
     {

@@ -42,6 +42,14 @@ class Departement
         $this->communes = new ArrayCollection();
     }
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getId(): ?string
     {
         return $this->id;

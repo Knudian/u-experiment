@@ -22,4 +22,12 @@ class CodeRNCP
     {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->id;
+    }
 }

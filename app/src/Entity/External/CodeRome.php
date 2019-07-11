@@ -25,6 +25,14 @@ class CodeRome
      */
     private $libelle;
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->id;
+    }
+
     public function getId(): ?string
     {
         return $this->id;
