@@ -13,7 +13,8 @@ RUN apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 # Ajout du multithreading
 RUN docker-php-ext-install pcntl
+COPY www.conf /usr/local/etc/php-fpm.d/
 # Installation de composer
 RUN curl -sL https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
 EXPOSE 9000

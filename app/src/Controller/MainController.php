@@ -1,15 +1,18 @@
-<?php
+<?php declare(strict_types = 1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends AbstractController
+final class MainController extends AbstractController
 {
     /**
      * @Route(name="index",path="/")
+     * @return Response
      */
-    public function index()
+    public function index(): Response
     {
         $page_title = 'La page';
         // liste des intitulés de domaines professionnels
@@ -71,6 +74,7 @@ class MainController extends AbstractController
           ]
         );
     }
+
 
 
 
@@ -210,4 +214,5 @@ class MainController extends AbstractController
           ]
         );
     }
+
 }

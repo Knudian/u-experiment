@@ -27,3 +27,8 @@
 /.php_cs.cache
 ###< friendsofphp/php-cs-fixer ###
 phpDocumentor.phar
+/.idea/
+
+###> behat/symfony2-extension ###
+behat.yml
+###< behat/symfony2-extension ###
