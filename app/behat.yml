@@ -3,8 +3,8 @@ default:
         default:
             contexts:
                 - FeatureContext
-                #- AccountValidationContext
-                #- DomainAuthorizationContext
+                - AccountValidationContext
+                - DomainAuthorizationContext
                 - DataExportContext
                 - UserRegisterContext
     extensions:
