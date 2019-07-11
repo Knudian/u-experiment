@@ -180,27 +180,5 @@ class ForgottenPasswordContext implements Context
     {
         throw new PendingException();
     }
-
-    /** CATALOGUE DE FORMATIONS */
-    
-    /**
-     * @Given I go on :arg1
-     */
-    public function iGoOn($page)
-    {
-        if($page == '/trainingCatalogue')
-        {
-            PHPUnit\Framework\Assert::assertTrue(true);
-        };
-    }
-
-    /**
-     * @Then I see all training
-     */
-    public function iSeeAllTraining()
-    {
-        throw new PendingException();
-    }
-
     
 }
